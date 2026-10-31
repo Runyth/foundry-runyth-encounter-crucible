@@ -69,11 +69,12 @@ test("the source tree documents the extension contract and deterministic release
 
 test("release tooling creates separate installable, source, and documentation ZIPs", async () => {
   const readme = await readFile(path.join(root, "README.md"), "utf8");
+  const manifest = JSON.parse(await readFile(path.join(root, "module", "encounter-crucible", "module.json"), "utf8"));
   const packageTool = await readFile(path.join(root, "tools", "package.py"), "utf8");
   for (const archive of [
-    "encounter-crucible-v1.8.8-mod.zip",
-    "encounter-crucible-v1.8.8-src.zip",
-    "encounter-crucible-v1.8.8-doc.zip"
+    `encounter-crucible-v${manifest.version}-mod.zip`,
+    `encounter-crucible-v${manifest.version}-src.zip`,
+    `encounter-crucible-v${manifest.version}-doc.zip`
   ]) {
     assert.match(readme, new RegExp(archive.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
   }

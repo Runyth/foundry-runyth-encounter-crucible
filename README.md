@@ -6,7 +6,7 @@ Encounter Crucible is a Foundry VTT v13 and D&D 5e encounter-analysis module. It
 
 - Foundry VTT: minimum 13, verified 13.351, maximum 13
 - D&D 5e: minimum 4.2.0, verified 5.2.2, declared maximum 5.3.x
-- Encounter Crucible module: 1.8.8
+- Encounter Crucible module: 1.8.9
 - Encounter Crucible Helper API: 2.7.5
 - Encounter data schema: 4
 
@@ -16,7 +16,7 @@ Version 1.8.8 hardens clean startup. The editable source remains modular, but th
 
 1. Disable Encounter Crucible in the target world.
 2. Remove or replace `Data/modules/encounter-crucible/`.
-3. Extract `encounter-crucible-v1.8.8-mod.zip` into `Data/modules/`.
+3. Extract `encounter-crucible-v1.8.9-mod.zip` into `Data/modules/`.
 4. Confirm `Data/modules/encounter-crucible/module.json` exists.
 5. Restart Foundry after replacing module files, then enable the module and reload the world.
 
@@ -77,10 +77,10 @@ npm run release
 Artifacts are written to `dist/`:
 
 ```text
-encounter-crucible-v1.8.8-mod.zip
-encounter-crucible-v1.8.8-src.zip
-encounter-crucible-v1.8.8-doc.zip
-encounter-crucible-v1.8.8-SHA256SUMS.txt
+encounter-crucible-v1.8.9-mod.zip
+encounter-crucible-v1.8.9-src.zip
+encounter-crucible-v1.8.9-doc.zip
+encounter-crucible-v1.8.9-SHA256SUMS.txt
 ```
 
 ## Repository layout
@@ -110,13 +110,13 @@ A licensed Foundry browser runtime is unavailable in the build environment. Comp
 
 - `docs/API.md`
 - `docs/COMPATIBILITY.md`
-- `docs/DEPENDENCY-COMPATIBILITY-v1.8.8.md`
-- `docs/COMPATIBILITY-AUDIT-v1.8.8.md`
-- `docs/PERFORMANCE-AUDIT-v1.8.8.md`
+- `docs/DEPENDENCY-COMPATIBILITY-v1.8.9.md`
+- `docs/COMPATIBILITY-AUDIT-v1.8.9.md`
+- `docs/PERFORMANCE-AUDIT-v1.8.9.md`
 - `docs/SETTINGS-AND-FLAGS.md`
 - `docs/TEST-PLAN.md`
-- `docs/VALIDATION-v1.8.8.md`
-- `docs/AUTOMATED-TEST-RESULTS-v1.8.8.md`
+- `docs/VALIDATION-v1.8.9.md`
+- `docs/AUTOMATED-TEST-RESULTS-v1.8.9.md`
 
 ## Licence
 Copyright © 2026  [Daniel Braniewski](https://brani.dev/)

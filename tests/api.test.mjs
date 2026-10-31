@@ -167,9 +167,9 @@ test("Helper API compatibility metadata is exposed through stable aliases", asyn
   assert.equal(api.helperVersion, "2.7.5");
   assert.equal(api.API_VERSION, "2.7.5");
   assert.equal(api.HELPER_API_VERSION, "2.7.5");
-  assert.equal(api.moduleVersion, "1.8.8");
-  assert.equal(api.coreVersion, "1.8.8");
-  assert.equal(api.MODULE_VERSION, "1.8.8");
+  assert.equal(api.moduleVersion, "1.8.9");
+  assert.equal(api.coreVersion, "1.8.9");
+  assert.equal(api.MODULE_VERSION, "1.8.9");
   assert.equal(api.helperApi.version, "2.7.5");
   assert.equal(api.helperAPI, api.helperApi);
   assert.equal(api.compatibility.helperApiVersion, "2.7.5");

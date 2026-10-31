@@ -1,6 +1,6 @@
 {
   "name": "encounter-crucible",
-  "version": "1.8.8",
+  "version": "1.8.9",
   "private": true,
   "description": "Reproducible source repository for the Encounter Crucible Foundry VTT module.",
   "type": "module",

@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.8.9 — 2026-11-01
+
+### Published
+
+- Aligned the repository with the AGPL-only publishing contract: added the AGPL notice to `tools/package.py`, removed the legacy all-rights-reserved `LICENSE.md` placeholder, and declared the licence in the lockfile root package.
+- Preserved the canonical content version; this patch changes licensing metadata only and requires no content migration.
+
 ## 1.8.8 — 2026-10-31
 
 ### Published
