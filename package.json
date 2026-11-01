@@ -1,6 +1,6 @@
 {
   "name": "runyth-encounter-crucible",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "private": true,
   "description": "Reproducible source repository for the Runyth Encounter Crucible Foundry VTT module.",
   "type": "module",

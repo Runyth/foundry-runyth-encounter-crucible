@@ -6,7 +6,7 @@ Runyth Encounter Crucible is a Foundry VTT v13 and D&D 5e encounter-analysis mod
 
 - Foundry VTT: minimum 13, verified 13.351, maximum 13
 - D&D 5e: minimum 4.2.0, verified 5.2.2, declared maximum 5.3.x
-- Runyth Encounter Crucible module: 1.9.0
+- Runyth Encounter Crucible module: 1.9.1
 - Runyth Encounter Crucible Helper API: 2.7.5
 - Encounter data schema: 4
 
@@ -16,7 +16,7 @@ Version 1.8.8 hardens clean startup. The editable source remains modular, but th
 
 1. Disable Runyth Encounter Crucible in the target world.
 2. Remove or replace `Data/modules/runyth-encounter-crucible/`.
-3. Extract `runyth-encounter-crucible-v1.9.0-mod.zip` into `Data/modules/`.
+3. Extract `runyth-encounter-crucible-v1.9.1-mod.zip` into `Data/modules/`.
 4. Confirm `Data/modules/runyth-encounter-crucible/module.json` exists.
 5. Restart Foundry after replacing module files, then enable the module and reload the world.
 
@@ -77,10 +77,10 @@ npm run release
 Artifacts are written to `dist/`:
 
 ```text
-runyth-encounter-crucible-v1.9.0-mod.zip
-runyth-encounter-crucible-v1.9.0-src.zip
-runyth-encounter-crucible-v1.9.0-doc.zip
-runyth-encounter-crucible-v1.9.0-SHA256SUMS.txt
+runyth-encounter-crucible-v1.9.1-mod.zip
+runyth-encounter-crucible-v1.9.1-src.zip
+runyth-encounter-crucible-v1.9.1-doc.zip
+runyth-encounter-crucible-v1.9.1-SHA256SUMS.txt
 ```
 
 ## Repository layout
@@ -110,13 +110,13 @@ A licensed Foundry browser runtime is unavailable in the build environment. Comp
 
 - `docs/API.md`
 - `docs/COMPATIBILITY.md`
-- `docs/DEPENDENCY-COMPATIBILITY-v1.9.0.md`
-- `docs/COMPATIBILITY-AUDIT-v1.9.0.md`
-- `docs/PERFORMANCE-AUDIT-v1.9.0.md`
+- `docs/DEPENDENCY-COMPATIBILITY-v1.9.1.md`
+- `docs/COMPATIBILITY-AUDIT-v1.9.1.md`
+- `docs/PERFORMANCE-AUDIT-v1.9.1.md`
 - `docs/SETTINGS-AND-FLAGS.md`
 - `docs/TEST-PLAN.md`
-- `docs/VALIDATION-v1.9.0.md`
-- `docs/AUTOMATED-TEST-RESULTS-v1.9.0.md`
+- `docs/VALIDATION-v1.9.1.md`
+- `docs/AUTOMATED-TEST-RESULTS-v1.9.1.md`
 
 ## Licence
 Copyright © 2026  [Daniel Braniewski](https://brani.dev/)

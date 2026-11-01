@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // Copyright (C) 2026 Runyth. See the LICENSE file for rights and obligations.
 export const MODULE_ID = "runyth-encounter-crucible";
-export const MODULE_VERSION = "1.9.0";
+export const MODULE_VERSION = "1.9.1";
 export const API_VERSION = "2.7.5";
 export const SCHEMA_VERSION = 4;
 export const ENCOUNTER_GENERATION_CAPABILITY_VERSION = "1.0.1";

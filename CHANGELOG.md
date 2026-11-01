@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.9.1 — 2026-11-01
+
+### Fixed
+
+- Removed the stale pre-rebrand `module/encounter-crucible/` source copies so the source archive carries only `module/runyth-encounter-crucible/`.
+- Preserved the rebranded runtime, API, and data contracts; this patch changes source packaging only.
+
+## 1.9.0 — 2026-11-01
 ## 1.9.0 — 2026-11-01
 
 ### Changed
