@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.9.0 — 2026-11-01
+
+### Changed
+
+- Adopted the Runyth brand across the whole published identity: the Foundry module id is now `runyth-encounter-crucible` and the displayed title is `Runyth Encounter Crucible`.
+- Renamed the runtime directory to `module/runyth-encounter-crucible/`, the stylesheet to `styles/runyth-encounter-crucible.css`, and all isolation class prefixes to `runyth-encounter-crucible-*`.
+- Installation folders for existing worlds must be renamed to `runyth-encounter-crucible/`; saved flags under the module-scoped namespace migrate with the folder rename.
 ## 1.8.9 — 2026-11-01
 
 ### Published

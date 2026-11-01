@@ -1,8 +1,8 @@
 {
-  "name": "encounter-crucible",
-  "version": "1.8.9",
+  "name": "runyth-encounter-crucible",
+  "version": "1.9.0",
   "private": true,
-  "description": "Reproducible source repository for the Encounter Crucible Foundry VTT module.",
+  "description": "Reproducible source repository for the Runyth Encounter Crucible Foundry VTT module.",
   "type": "module",
   "engines": {
     "node": ">=22.13.0 <27"
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Runyth/foundry-encounter-crucible.git"
+    "url": "https://github.com/Runyth/foundry-runyth-encounter-crucible.git"
   },
   "license": "AGPL-3.0-or-later"
 }
