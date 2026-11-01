@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// Copyright (C) 2026 Runyth. See the LICENSE file for rights and obligations.
+// Copyright (C) 2026 Daniel Braniewski. See the LICENSE file for rights and obligations.
 import assert from "node:assert/strict";
 import test from "node:test";
 
@@ -167,9 +167,9 @@ test("Helper API compatibility metadata is exposed through stable aliases", asyn
   assert.equal(api.helperVersion, "2.7.5");
   assert.equal(api.API_VERSION, "2.7.5");
   assert.equal(api.HELPER_API_VERSION, "2.7.5");
-  assert.equal(api.moduleVersion, "1.9.1");
-  assert.equal(api.coreVersion, "1.9.1");
-  assert.equal(api.MODULE_VERSION, "1.9.1");
+  assert.equal(api.moduleVersion, "1.9.2");
+  assert.equal(api.coreVersion, "1.9.2");
+  assert.equal(api.MODULE_VERSION, "1.9.2");
   assert.equal(api.helperApi.version, "2.7.5");
   assert.equal(api.helperAPI, api.helperApi);
   assert.equal(api.compatibility.helperApiVersion, "2.7.5");

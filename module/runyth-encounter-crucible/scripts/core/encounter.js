@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// Copyright (C) 2026 Runyth. See the LICENSE file for rights and obligations.
+// Copyright (C) 2026 Daniel Braniewski. See the LICENSE file for rights and obligations.
 import { API_VERSION, MODULE_ID, SCHEMA_VERSION, XP_BUDGET_2024 } from "./constants.js";
 import { aggregateAssessment, xpForCr } from "./calculations.js";
 import { clamp, deepClone, formatDate, slugify, sum } from "./utils.js";

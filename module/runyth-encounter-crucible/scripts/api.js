@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// Copyright (C) 2026 Runyth. See the LICENSE file for rights and obligations.
+// Copyright (C) 2026 Daniel Braniewski. See the LICENSE file for rights and obligations.
 import { aggregateAssessment } from "./core/calculations.js";
 import { API_VERSION, ASSESS_ENCOUNTER_CAPABILITY_VERSION, COLLECT_ACTORS_CAPABILITY_VERSION, ENCOUNTER_GENERATION_CAPABILITY_VERSION, MODULE_ID, MODULE_VERSION, SCHEMA_VERSION } from "./core/constants.js";
 import { assertVersion, satisfiesVersion } from "./core/version.js";

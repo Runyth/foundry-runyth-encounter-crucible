@@ -16,7 +16,7 @@ Version 1.8.8 hardens clean startup. The editable source remains modular, but th
 
 1. Disable Runyth Encounter Crucible in the target world.
 2. Remove or replace `Data/modules/runyth-encounter-crucible/`.
-3. Extract `runyth-encounter-crucible-v1.9.1-mod.zip` into `Data/modules/`.
+3. Extract `runyth-encounter-crucible-v1.9.2-mod.zip` into `Data/modules/`.
 4. Confirm `Data/modules/runyth-encounter-crucible/module.json` exists.
 5. Restart Foundry after replacing module files, then enable the module and reload the world.
 
@@ -77,10 +77,10 @@ npm run release
 Artifacts are written to `dist/`:
 
 ```text
-runyth-encounter-crucible-v1.9.1-mod.zip
-runyth-encounter-crucible-v1.9.1-src.zip
-runyth-encounter-crucible-v1.9.1-doc.zip
-runyth-encounter-crucible-v1.9.1-SHA256SUMS.txt
+runyth-encounter-crucible-v1.9.2-mod.zip
+runyth-encounter-crucible-v1.9.2-src.zip
+runyth-encounter-crucible-v1.9.2-doc.zip
+runyth-encounter-crucible-v1.9.2-SHA256SUMS.txt
 ```
 
 ## Repository layout
