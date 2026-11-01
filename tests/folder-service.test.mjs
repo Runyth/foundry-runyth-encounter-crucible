@@ -3,7 +3,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { actorsInFolder, descendantActorFolders } from "../module/encounter-crucible/scripts/services/folder-service.js";
+import { actorsInFolder, descendantActorFolders } from "../module/runyth-encounter-crucible/scripts/services/folder-service.js";
 
 const originalGame = globalThis.game;
 
@@ -67,7 +67,7 @@ test("folder labels and normalized candidates are cached until Foundry invalidat
     folders: { contents: folders, get: (id) => folders.find((folder) => folder.id === id) },
     actors: { contents: [actor] }
   };
-  return import("../module/encounter-crucible/scripts/services/folder-service.js").then((service) => {
+  return import("../module/runyth-encounter-crucible/scripts/services/folder-service.js").then((service) => {
     service.invalidateActorFolderCache();
     service.invalidateActorCandidateCache();
     assert.equal(service.actorFolderOptions()[0].name, "Root");

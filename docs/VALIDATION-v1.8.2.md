@@ -1,4 +1,4 @@
-# Validation — Encounter Crucible 1.8.2
+# Validation — Runyth Encounter Crucible 1.8.2
 
 The release gate covers:
 

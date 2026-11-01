@@ -12,7 +12,7 @@ import {
   calculateTacticalContext,
   multiplier2014,
   xpForCr
-} from "../module/encounter-crucible/scripts/core/calculations.js";
+} from "../module/runyth-encounter-crucible/scripts/core/calculations.js";
 
 const party = (...levels) => levels.map((level, index) => ({
   id: `pc-${index}`,

@@ -4,7 +4,7 @@ import { access, readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 
 const root = path.resolve(new URL("..", import.meta.url).pathname);
-const moduleRoot = path.join(root, "build", "encounter-crucible");
+const moduleRoot = path.join(root, "build", "runyth-encounter-crucible");
 const manifestPath = path.join(moduleRoot, "module.json");
 const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
 const failures = [];
@@ -45,7 +45,7 @@ for (const file of scriptFiles) {
   const content = await readFile(file, "utf8");
   if (/\bimport\s+(?:\{|["'])/.test(content)) failures.push(`${path.relative(moduleRoot, file)} contains a runtime static import`);
   if (/\bexport\s+(?:default|\{|class|function|const|let|var)/.test(content)) failures.push(`${path.relative(moduleRoot, file)} contains an unbundled export`);
-  if (!content.includes("Generated deterministically from modular Encounter Crucible source.")) {
+  if (!content.includes("Generated deterministically from modular Runyth Encounter Crucible source.")) {
     failures.push(`${path.relative(moduleRoot, file)} is not a generated bundle`);
   }
 }

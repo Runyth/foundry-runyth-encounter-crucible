@@ -1,4 +1,4 @@
-# Validation — Encounter Crucible 1.8.8
+# Validation — Runyth Encounter Crucible 1.8.8
 
 Release validation covers:
 

@@ -1,4 +1,4 @@
-# Release report — Encounter Crucible 1.8.6
+# Release report — Runyth Encounter Crucible 1.8.6
 
 This patch hardens Forge detection of the already-implemented `encounterGeneration` capability. It introduces no data migration and no functional redesign.
 

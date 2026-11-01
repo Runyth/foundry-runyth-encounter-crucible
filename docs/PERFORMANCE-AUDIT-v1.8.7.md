@@ -1,4 +1,4 @@
-# Performance audit — Encounter Crucible 1.8.7
+# Performance audit — Runyth Encounter Crucible 1.8.7
 
 The new public capabilities reuse existing optimized core services instead of adding parallel scans or calculation engines.
 

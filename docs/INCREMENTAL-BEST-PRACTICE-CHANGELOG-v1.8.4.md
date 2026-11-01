@@ -1,4 +1,4 @@
-# Incremental best-practice changelog — Encounter Crucible 1.8.4
+# Incremental best-practice changelog — Runyth Encounter Crucible 1.8.4
 
 - Added explicit feature-capability discovery instead of inferring support from version strings alone.
 - Added a cohesive frozen generation namespace while preserving stable top-level entry points.

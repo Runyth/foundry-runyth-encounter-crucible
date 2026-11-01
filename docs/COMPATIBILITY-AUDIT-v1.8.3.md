@@ -1,4 +1,4 @@
-# Compatibility and performance audit — Encounter Crucible 1.8.3
+# Compatibility and performance audit — Runyth Encounter Crucible 1.8.3
 
 ## Scope
 
@@ -44,7 +44,7 @@ The complete 1.8.2 production tree was reviewed for Foundry v13 lifecycle behavi
 - `scripts/workers/encounter-generator-worker.js`
 - `scripts/apps/workshop.js`
 - `templates/workshop.hbs`
-- `styles/encounter-crucible.css`
+- `styles/runyth-encounter-crucible.css`
 - `scripts/services/folder-service.js`
 - `scripts/integrations/runtime-refresh.js`
 - `scripts/combat-tracker.js`
@@ -54,4 +54,4 @@ The complete 1.8.2 production tree was reviewed for Foundry v13 lifecycle behavi
 
 ## External errors
 
-No external package error was masked or monkey-patched. The release modifies only Encounter Crucible-owned runtime paths and supported Foundry integration hooks.
+No external package error was masked or monkey-patched. The release modifies only Runyth Encounter Crucible-owned runtime paths and supported Foundry integration hooks.

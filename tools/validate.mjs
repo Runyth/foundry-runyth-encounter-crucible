@@ -4,7 +4,7 @@ import { access, readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 
 const root = path.resolve(new URL("..", import.meta.url).pathname);
-const moduleRoot = path.join(root, "module", "encounter-crucible");
+const moduleRoot = path.join(root, "module", "runyth-encounter-crucible");
 const manifestPath = path.join(moduleRoot, "module.json");
 const packagePath = path.join(root, "package.json");
 const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
@@ -21,7 +21,7 @@ async function walk(directory) {
   return files;
 }
 
-if (manifest.id !== "encounter-crucible") failures.push("manifest id is not encounter-crucible");
+if (manifest.id !== "runyth-encounter-crucible") failures.push("manifest id is not runyth-encounter-crucible");
 if (manifest.version !== packageJson.version) failures.push("manifest and package versions differ");
 if (manifest.compatibility?.minimum !== "13") failures.push("Foundry minimum is not v13");
 if (manifest.compatibility?.verified !== "13.351") failures.push("Foundry verified target is not 13.351");
@@ -76,12 +76,12 @@ for (const file of scriptFiles) {
       failures.push(`${path.relative(moduleRoot, file)}: missing ES module import ${match[1]}`);
     }
   }
-  for (const match of content.matchAll(/["']modules\/encounter-crucible\/([^"']+)["']/g)) {
+  for (const match of content.matchAll(/["']modules\/runyth-encounter-crucible\/([^"']+)["']/g)) {
     const referenced = path.join(moduleRoot, match[1]);
     try {
       await access(referenced);
     } catch {
-      failures.push(`${path.relative(moduleRoot, file)}: missing runtime path modules/encounter-crucible/${match[1]}`);
+      failures.push(`${path.relative(moduleRoot, file)}: missing runtime path modules/runyth-encounter-crucible/${match[1]}`);
     }
   }
   for (const match of content.matchAll(/localize\(["']([^"']+)["']/g)) {
@@ -91,7 +91,7 @@ for (const file of scriptFiles) {
   }
 }
 
-const cssPath = path.join(moduleRoot, "styles", "encounter-crucible.css");
+const cssPath = path.join(moduleRoot, "styles", "runyth-encounter-crucible.css");
 const css = await readFile(cssPath, "utf8");
 const globallyForbiddenCss = [
   /^\s*\.window-header\b/m,
@@ -109,7 +109,7 @@ for (const pattern of globallyForbiddenCss) {
 }
 if (/z-index\s*:/.test(css)) failures.push("stylesheet sets z-index");
 for (const line of css.split("\n")) {
-  if (line.includes(".ec-") && !line.includes(".encounter-crucible .ec-")) {
+  if (line.includes(".ec-") && !line.includes(".runyth-encounter-crucible .ec-")) {
     failures.push(`unscoped .ec-* selector: ${line.trim()}`);
   }
 }

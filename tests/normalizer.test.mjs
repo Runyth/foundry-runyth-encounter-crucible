@@ -7,7 +7,7 @@ import {
   classifyToken,
   normalizeActor,
   normalizeToken
-} from "../module/encounter-crucible/scripts/services/actor-normalizer.js";
+} from "../module/runyth-encounter-crucible/scripts/services/actor-normalizer.js";
 
 const originalGame = globalThis.game;
 const originalConst = globalThis.CONST;

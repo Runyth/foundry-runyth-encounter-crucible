@@ -1,4 +1,4 @@
-# Incremental best-practice changelog — Encounter Crucible 1.8.3
+# Incremental best-practice changelog — Runyth Encounter Crucible 1.8.3
 
 - Isolated CPU-bound search in a dedicated browser Worker.
 - Added cooperative yielding and AbortSignal cancellation fallback.

@@ -1,4 +1,4 @@
-# Dependency compatibility — Encounter Crucible 1.8.8
+# Dependency compatibility — Runyth Encounter Crucible 1.8.8
 
 ## Released contract
 
@@ -16,11 +16,11 @@ The installable core is now a self-contained ES-module bundle. Evaluating `scrip
 
 Automated startup regression coverage verifies:
 
-- `game.modules.get("encounter-crucible").api` exists immediately after the generated runtime evaluates;
+- `game.modules.get("runyth-encounter-crucible").api` exists immediately after the generated runtime evaluates;
 - Helper API is exactly `2.7.5`;
 - `encounterGeneration`, `collectActors`, `assessEncounter`, and `helperModuleRegistry` are available;
-- Encounter Crucible: Forge can register;
+- Runyth Encounter Crucible: Forge can register;
 - a campaign helper can register;
-- registration remains available before Encounter Crucible's own `init` callback.
+- registration remains available before Runyth Encounter Crucible's own `init` callback.
 
 Existing dependants requiring module `>=1.8.1` and Helper API `>=2.7.1 <3.0.0` remain compatible.

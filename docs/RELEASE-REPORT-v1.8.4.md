@@ -1,12 +1,12 @@
-# Release report — Encounter Crucible 1.8.4
+# Release report — Runyth Encounter Crucible 1.8.4
 
 ## Objective
 
-Restore reliable Encounter Crucible: Forge integration by supplying the named `encounterGeneration` capability expected by its compatibility gate.
+Restore reliable Runyth Encounter Crucible: Forge integration by supplying the named `encounterGeneration` capability expected by its compatibility gate.
 
 ## Result
 
-Encounter Crucible now exposes a frozen callable generation capability namespace and multiple explicit discovery surfaces. Forge can validate module version, Helper API range, and feature availability independently. Existing API consumers remain compatible because no established method was removed or renamed.
+Runyth Encounter Crucible now exposes a frozen callable generation capability namespace and multiple explicit discovery surfaces. Forge can validate module version, Helper API range, and feature availability independently. Existing API consumers remain compatible because no established method was removed or renamed.
 
 ## Identity
 

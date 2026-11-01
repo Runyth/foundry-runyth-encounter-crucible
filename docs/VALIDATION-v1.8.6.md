@@ -1,4 +1,4 @@
-# Validation — Encounter Crucible 1.8.6
+# Validation — Runyth Encounter Crucible 1.8.6
 
 - Formatting: passed.
 - Compatibility lint: passed.

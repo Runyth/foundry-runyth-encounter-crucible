@@ -1,4 +1,4 @@
-# Performance audit — Encounter Crucible 1.8.4
+# Performance audit — Runyth Encounter Crucible 1.8.4
 
 The v1.8.3 performance architecture remains intact:
 

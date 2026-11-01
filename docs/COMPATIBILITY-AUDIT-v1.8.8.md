@@ -1,8 +1,8 @@
-# Compatibility audit — Encounter Crucible 1.8.8
+# Compatibility audit — Runyth Encounter Crucible 1.8.8
 
 ## Reported defect
 
-Encounter Crucible 1.8.7 could be detected by Foundry while its public API remained unavailable because browser requests for required internal ES modules failed with `net::ERR_FAILED`, including `scripts/core/encounter.js`, `scripts/services/generation-service.js`, and `scripts/services/actor-normalizer.js`. Forge and a campaign helper then correctly saw the core module version but no Helper API.
+Runyth Encounter Crucible 1.8.7 could be detected by Foundry while its public API remained unavailable because browser requests for required internal ES modules failed with `net::ERR_FAILED`, including `scripts/core/encounter.js`, `scripts/services/generation-service.js`, and `scripts/services/actor-normalizer.js`. Forge and a campaign helper then correctly saw the core module version but no Helper API.
 
 The files were present in the delivered archive. The defect was therefore startup topology: `scripts/main.js` imported the complete internal source graph directly in the browser. Failure of any required child request aborted module evaluation before `exposePublicApi()` could execute.
 
@@ -22,4 +22,4 @@ Helper API remains `2.7.5`; capability versions remain unchanged; persistent sch
 
 ## Unrelated errors
 
-No broad compatibility workaround was added for errors owned by other enabled packages. The patch is limited to Encounter Crucible's runtime delivery and startup path.
+No broad compatibility workaround was added for errors owned by other enabled packages. The patch is limited to Runyth Encounter Crucible's runtime delivery and startup path.

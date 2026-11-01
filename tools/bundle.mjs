@@ -12,7 +12,7 @@ function normalizeId(value) {
 
 function resolveImport(moduleId, specifier) {
   if (!specifier.startsWith(".")) {
-    throw new Error(`Encounter Crucible runtime bundler only accepts relative imports: ${moduleId} -> ${specifier}`);
+    throw new Error(`Runyth Encounter Crucible runtime bundler only accepts relative imports: ${moduleId} -> ${specifier}`);
   }
   return normalizeId(path.posix.normalize(path.posix.join(path.posix.dirname(moduleId), specifier)));
 }
@@ -28,7 +28,7 @@ function exportedNames(source) {
     for (const match of source.matchAll(pattern)) names.add(match[1]);
   }
   if (/\bexport\s+(?:default|\{)/.test(source)) {
-    throw new Error("Encounter Crucible runtime bundler does not support default exports or export lists.");
+    throw new Error("Runyth Encounter Crucible runtime bundler does not support default exports or export lists.");
   }
   return [...names];
 }
@@ -79,7 +79,7 @@ export async function bundleEntry({ sourceRoot, entry, destination, banner = "" 
     .map(([id, { transformed }]) => `${JSON.stringify(id)}: (module, exports, __require) => {\n${transformed}\n}`)
     .join(",\n");
 
-  const output = `${banner ? `${banner.trim()}\n` : ""}// Generated deterministically from modular Encounter Crucible source.\nconst __ecModules = {\n${factories}\n};\nconst __ecCache = new Map();\nfunction __ecRequire(id) {\n  if (__ecCache.has(id)) return __ecCache.get(id).exports;\n  const factory = __ecModules[id];\n  if (!factory) throw new Error(\`Encounter Crucible bundled module not found: \${id}\`);\n  const module = { exports: {} };\n  __ecCache.set(id, module);\n  factory(module, module.exports, __ecRequire);\n  return module.exports;\n}\n__ecRequire(${JSON.stringify(entryId)});\n`;
+  const output = `${banner ? `${banner.trim()}\n` : ""}// Generated deterministically from modular Runyth Encounter Crucible source.\nconst __ecModules = {\n${factories}\n};\nconst __ecCache = new Map();\nfunction __ecRequire(id) {\n  if (__ecCache.has(id)) return __ecCache.get(id).exports;\n  const factory = __ecModules[id];\n  if (!factory) throw new Error(\`Runyth Encounter Crucible bundled module not found: \${id}\`);\n  const module = { exports: {} };\n  __ecCache.set(id, module);\n  factory(module, module.exports, __ecRequire);\n  return module.exports;\n}\n__ecRequire(${JSON.stringify(entryId)});\n`;
 
   await mkdir(path.dirname(destination), { recursive: true });
   await writeFile(destination, output, { encoding: "utf8", newline: "\n" });

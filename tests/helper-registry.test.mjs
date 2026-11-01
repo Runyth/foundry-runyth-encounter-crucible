@@ -3,7 +3,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { createHelperModuleRegistry } from "../module/encounter-crucible/scripts/core/helper-registry.js";
+import { createHelperModuleRegistry } from "../module/runyth-encounter-crucible/scripts/core/helper-registry.js";
 
 test("helper modules register through descriptor and stable aliases", () => {
   const registered = [];
@@ -14,13 +14,13 @@ test("helper modules register through descriptor and stable aliases", () => {
   });
   const forgeApi = { version: "1.2.3", capabilities: ["encounterGeneration"] };
   const descriptor = registry.registerHelperModule({
-    id: "encounter-crucible-forge",
+    id: "runyth-encounter-crucible-forge",
     api: forgeApi,
     capabilities: ["encounterGeneration", "encounterGeneration"]
   });
 
-  assert.equal(descriptor.id, "encounter-crucible-forge");
-  assert.equal(descriptor.moduleId, "encounter-crucible-forge");
+  assert.equal(descriptor.id, "runyth-encounter-crucible-forge");
+  assert.equal(descriptor.moduleId, "runyth-encounter-crucible-forge");
   assert.equal(descriptor.version, "1.2.3");
   assert.equal(descriptor.api, forgeApi);
   assert.deepEqual(descriptor.capabilities, ["encounterGeneration"]);

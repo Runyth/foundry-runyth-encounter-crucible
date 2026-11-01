@@ -4,11 +4,11 @@ Use cloned Foundry v13.351 worlds with D&D 5e 5.2.2 and the latest 5.3.x release
 
 ## Installation and lifecycle
 
-1. Extract the installable ZIP into `Data/modules/`; verify exactly `Data/modules/encounter-crucible/module.json`.
+1. Extract the installable ZIP into `Data/modules/`; verify exactly `Data/modules/runyth-encounter-crucible/module.json`.
 2. Enable the module and reload the world.
-3. Verify no error, unhandled Promise rejection, or deprecation warning originates from a path under `modules/encounter-crucible/`.
+3. Verify no error, unhandled Promise rejection, or deprecation warning originates from a path under `modules/runyth-encounter-crucible/`.
 4. Refresh both browsers, reload the world, disable the module, re-enable it, and reload again.
-5. Confirm settings, the Scene Control, the Combat Tracker panel, and `game.modules.get("encounter-crucible").api` each initialize once.
+5. Confirm settings, the Scene Control, the Combat Tracker panel, and `game.modules.get("runyth-encounter-crucible").api` each initialize once.
 6. Confirm disabling the module neither deletes nor rewrites Actors, Tokens, Scenes, Items, Journal Entries, or settings data.
 
 ## GM and player permissions
@@ -31,7 +31,7 @@ Use cloned Foundry v13.351 worlds with D&D 5e 5.2.2 and the latest 5.3.x release
 
 ## Sheet and dialog non-interference
 
-Open each interface with Encounter Crucible enabled and confirm no Encounter Crucible control, style, listener, or layout change appears:
+Open each interface with Runyth Encounter Crucible enabled and confirm no Runyth Encounter Crucible control, style, listener, or layout change appears:
 
 - core D&D 5e character sheet;
 - core D&D 5e NPC sheet;
@@ -55,13 +55,13 @@ Partially rerender supported and unsupported sheets. Verify no duplicate control
 
 1. Open and rerender the Token HUD for linked, unlinked, owned, and unowned Tokens.
 2. Test one selected Token and multiple selected Tokens.
-3. Confirm Encounter Crucible adds no Token HUD control or listener.
-4. Change Scenes, refresh the canvas, hide and delete Tokens, and confirm no Encounter Crucible display object, label, nameplate modification, or stale canvas object exists.
+3. Confirm Runyth Encounter Crucible adds no Token HUD control or listener.
+4. Change Scenes, refresh the canvas, hide and delete Tokens, and confirm no Runyth Encounter Crucible display object, label, nameplate modification, or stale canvas object exists.
 5. Use representative Token HUD and canvas modules and confirm their controls remain usable.
 
 ## Scene Controls
 
-1. As GM, select Token Controls and verify exactly one Encounter Crucible tool.
+1. As GM, select Token Controls and verify exactly one Runyth Encounter Crucible tool.
 2. Rerender Scene Controls, switch control groups, change Scenes, refresh, and reload the world.
 3. Verify the tool remains single, opens the Workshop once, and does not replace or reorder unrelated tools unexpectedly.
 4. As player, verify the tool is absent.
@@ -72,7 +72,7 @@ Partially rerender supported and unsupported sheets. Verify no duplicate control
 1. Open the tracker with no active Combat and verify one launcher panel.
 2. Create an active Combat and verify one preview panel and one assessment summary.
 3. Update relevant Actor HP and combatants; verify refresh occurs without duplicate panels or listeners.
-4. Update an unrelated Actor; verify the tracker is not needlessly rerendered by Encounter Crucible.
+4. Update an unrelated Actor; verify the tracker is not needlessly rerendered by Runyth Encounter Crucible.
 5. Repeatedly rerender and switch Combats; verify one panel and one action per click.
 6. Confirm preview rendering does not write `lastEncounter`, run extension models, or emit analysis hooks.
 
@@ -94,7 +94,7 @@ Partially rerender supported and unsupported sheets. Verify no duplicate control
 
 1. Repeat representative workflows in English and German.
 2. Enable a representative set of active modules, including Tidy 5e Sheets, Midi-QOL, DAE, a Token HUD module, a Chat module, and a Scene Controls module.
-3. Attribute every warning to its package path. Do not treat another module's deprecated hook or DOM error as an Encounter Crucible defect unless the stack originates from `modules/encounter-crucible/`.
+3. Attribute every warning to its package path. Do not treat another module's deprecated hook or DOM error as an Runyth Encounter Crucible defect unless the stack originates from `modules/runyth-encounter-crucible/`.
 
 ## Acceptance record
 
@@ -111,13 +111,13 @@ Record Foundry version, D&D 5e version, other enabled module versions, browser, 
 
 ## Dependent-module detection regression
 
-1. Install Encounter Crucible 1.8.7 and Encounter Crucible: Forge requiring module 1.8.1+ and Helper API 2.7.1+ within major version 2.
+1. Install Runyth Encounter Crucible 1.8.7 and Runyth Encounter Crucible: Forge requiring module 1.8.1+ and Helper API 2.7.1+ within major version 2.
 2. Reload the world and verify the dependant does not emit the prior false requirement error.
-3. In the dependant's top-level ES module and again during `init`, inspect `game.modules.get("encounter-crucible")?.api`; confirm the same object exists both times.
+3. In the dependant's top-level ES module and again during `init`, inspect `game.modules.get("runyth-encounter-crucible")?.api`; confirm the same object exists both times.
 4. Confirm all documented Helper API aliases report `2.7.5` and all module aliases report `1.8.7`.
 5. Confirm `isModuleVersionSupported(">=1.8.1")` and `isApiVersionSupported(">=2.7.1")` return true.
 6. Confirm `whenReady()` resolves to the same API object after Foundry `ready`.
-7. Disable Encounter Crucible and verify the dependant reports a genuinely missing/inactive dependency rather than an API mismatch.
+7. Disable Runyth Encounter Crucible and verify the dependant reports a genuinely missing/inactive dependency rather than an API mismatch.
 8. In a disposable copy, lower the required API to a compatible range and raise it to an incompatible range; verify only the incompatible range fails.
 9. Confirm `api.encounterGeneration`, `api.features.encounterGeneration`, and `api.helperApi.encounterGeneration` reference the same frozen namespace.
 10. Confirm `api.capabilities.includes("encounterGeneration")`, `api.capabilityMap.encounterGeneration`, and `api.hasCapability("encounterGeneration")` all succeed.
@@ -126,7 +126,7 @@ Record Foundry version, D&D 5e version, other enabled module versions, browser, 
 13. Confirm Forge registers through `api.registerHelperModule(...)` without reporting `helper-registry-missing`.
 14. Confirm `api.helperModules`, `api.helperRegistry`, and `api.helpers` are the same frozen namespace.
 15. Reload the world and verify an identical helper registration remains idempotent and produces one registered descriptor.
-16. Disable Forge and verify Encounter Crucible remains fully usable and stored encounter data remains intact.
+16. Disable Forge and verify Runyth Encounter Crucible remains fully usable and stored encounter data remains intact.
 
 ## Performance and responsiveness — v1.8.7
 
@@ -142,13 +142,13 @@ Record Foundry version, D&D 5e version, other enabled module versions, browser, 
 
 ## 1.8.8 clean-start runtime loading
 
-1. Fully stop Foundry after replacing Encounter Crucible files; do not rely on a world reload alone.
-2. Start Foundry v13.351 and open a world with Encounter Crucible, Encounter Crucible: Forge, and a campaign helper enabled.
+1. Fully stop Foundry after replacing Runyth Encounter Crucible files; do not rely on a world reload alone.
+2. Start Foundry v13.351 and open a world with Runyth Encounter Crucible, Runyth Encounter Crucible: Forge, and a campaign helper enabled.
 3. Open the browser Network panel before the world view initializes.
-4. Confirm Encounter Crucible loads `modules/encounter-crucible/scripts/main.js` successfully.
-5. Confirm there are no requests for `scripts/core/encounter.js`, `scripts/services/generation-service.js`, `scripts/services/actor-normalizer.js`, or other Encounter Crucible source modules during core startup.
+4. Confirm Runyth Encounter Crucible loads `modules/runyth-encounter-crucible/scripts/main.js` successfully.
+5. Confirm there are no requests for `scripts/core/encounter.js`, `scripts/services/generation-service.js`, `scripts/services/actor-normalizer.js`, or other Runyth Encounter Crucible source modules during core startup.
 6. Confirm `scripts/workers/encounter-generator-worker.js` is requested only when encounter generation uses the Worker path.
-7. In the console, confirm `game.modules.get("encounter-crucible")?.api?.apiVersion` is `2.7.5`.
+7. In the console, confirm `game.modules.get("runyth-encounter-crucible")?.api?.apiVersion` is `2.7.5`.
 8. Confirm Forge and a campaign helper do not report `core/API unavailable`, `helper registry missing`, or missing capability errors.
-9. Confirm both helpers appear in `game.modules.get("encounter-crucible").api.listHelperModules()` after their registration lifecycle.
+9. Confirm both helpers appear in `game.modules.get("runyth-encounter-crucible").api.listHelperModules()` after their registration lifecycle.
 10. Repeat once with Foundry served under a configured URL route prefix and verify Worker generation succeeds.

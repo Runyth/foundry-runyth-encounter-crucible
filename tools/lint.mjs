@@ -5,7 +5,7 @@ import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 
 const root = path.resolve(new URL("..", import.meta.url).pathname);
-const runtime = path.join(root, "module", "encounter-crucible");
+const runtime = path.join(root, "module", "runyth-encounter-crucible");
 const ignored = new Set([".git", "build", "dist", "node_modules", "coverage"]);
 const sourceFiles = [];
 

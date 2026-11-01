@@ -1,4 +1,4 @@
-# Dependency compatibility — Encounter Crucible 1.8.7
+# Dependency compatibility — Runyth Encounter Crucible 1.8.7
 
 ## Released contract
 
@@ -14,9 +14,9 @@
 
 a campaign helper requires the public Helper API capabilities `collectActors` and `assessEncounter`. Version 1.8.7 implements and advertises both capabilities through every supported discovery surface.
 
-`collectActors` gives helper modules an authorized core-owned Actor collection path without requiring direct traversal of Foundry collections or duplication of Encounter Crucible's recursive folder logic. Raw Actor Documents are returned by default so campaign helpers can inspect their own metadata; optional normalization delegates to Encounter Crucible's existing participant normalizer.
+`collectActors` gives helper modules an authorized core-owned Actor collection path without requiring direct traversal of Foundry collections or duplication of Runyth Encounter Crucible's recursive folder logic. Raw Actor Documents are returned by default so campaign helpers can inspect their own metadata; optional normalization delegates to Runyth Encounter Crucible's existing participant normalizer.
 
-`assessEncounter` delegates to Encounter Crucible's authoritative assessment engine. Helper preview calls are side-effect-safe by default: they do not remember the encounter or emit assessment hooks unless explicitly requested.
+`assessEncounter` delegates to Runyth Encounter Crucible's authoritative assessment engine. Helper preview calls are side-effect-safe by default: they do not remember the encounter or emit assessment hooks unless explicitly requested.
 
 ## Capability discovery
 

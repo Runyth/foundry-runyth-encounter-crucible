@@ -1,13 +1,13 @@
-# Compatibility and API exposure audit — Encounter Crucible 1.8.2
+# Compatibility and API exposure audit — Runyth Encounter Crucible 1.8.2
 
 ## Trigger
 
-Dependent modules reported that Encounter Crucible 1.8.1 or newer with Helper API 2.7.1 was required even while the core logged that exact module/API combination.
+Dependent modules reported that Runyth Encounter Crucible 1.8.1 or newer with Helper API 2.7.1 was required even while the core logged that exact module/API combination.
 
 ## Root causes
 
 1. The reproducible package metadata available to this release process still identified the module as 1.4.2, below the dependants' 1.8.1 minimum.
-2. The public API was constructed and attached only inside Encounter Crucible's `init` callback.
+2. The public API was constructed and attached only inside Runyth Encounter Crucible's `init` callback.
 3. Foundry does not guarantee the relative order of separately registered callbacks merely because both use `init`; a dependant could inspect before the core callback ran.
 4. The API exposed only `apiVersion`, leaving dependants using common legacy aliases without a stable compatibility value.
 5. No public semantic-version helper or readiness Promise existed, encouraging ad hoc comparison and lifecycle assumptions.
@@ -26,12 +26,12 @@ Dependent modules reported that Encounter Crucible 1.8.1 or newer with Helper AP
 
 ## Files affected
 
-- `module/encounter-crucible/module.json`
-- `module/encounter-crucible/scripts/main.js`
-- `module/encounter-crucible/scripts/api.js`
-- `module/encounter-crucible/scripts/core/constants.js`
-- `module/encounter-crucible/scripts/core/lifecycle.js`
-- `module/encounter-crucible/scripts/core/version.js`
+- `module/runyth-encounter-crucible/module.json`
+- `module/runyth-encounter-crucible/scripts/main.js`
+- `module/runyth-encounter-crucible/scripts/api.js`
+- `module/runyth-encounter-crucible/scripts/core/constants.js`
+- `module/runyth-encounter-crucible/scripts/core/lifecycle.js`
+- `module/runyth-encounter-crucible/scripts/core/version.js`
 - tests, release documentation, and deterministic packaging tooling
 
 ## Intentionally unchanged

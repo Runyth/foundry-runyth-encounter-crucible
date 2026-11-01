@@ -1,4 +1,4 @@
-# Automated test results — Encounter Crucible 1.8.7
+# Automated test results — Runyth Encounter Crucible 1.8.7
 
 The release gate passed 92 automated tests with zero failures.
 

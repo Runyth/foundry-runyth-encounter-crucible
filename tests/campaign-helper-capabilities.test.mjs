@@ -3,8 +3,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { createApi } from "../module/encounter-crucible/scripts/api.js";
-import { createEncounterDefinition } from "../module/encounter-crucible/scripts/core/encounter.js";
+import { createApi } from "../module/runyth-encounter-crucible/scripts/api.js";
+import { createEncounterDefinition } from "../module/runyth-encounter-crucible/scripts/core/encounter.js";
 
 const originalGame = globalThis.game;
 const originalHooks = globalThis.Hooks;
@@ -59,7 +59,7 @@ test("collectActors returns raw world Actors by default and supports recursive f
   assert.deepEqual(core.collectActors({ types: "npc" }).map((actor) => actor.id), ["npc1", "npc2"]);
 });
 
-test("collectActors optionally delegates normalization to Encounter Crucible", () => {
+test("collectActors optionally delegates normalization to Runyth Encounter Crucible", () => {
   const core = api();
   const normalized = core.collectActors({ folderId: "root", recursive: true, normalized: true, side: "enemy" });
   assert.deepEqual(normalized.map((actor) => actor.actorUuid), ["Actor.npc1", "Actor.npc2"]);

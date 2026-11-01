@@ -3,7 +3,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { registerSettings } from "../module/encounter-crucible/scripts/settings.js";
+import { registerSettings } from "../module/runyth-encounter-crucible/scripts/settings.js";
 
 const originalGame = globalThis.game;
 

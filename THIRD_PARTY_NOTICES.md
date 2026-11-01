@@ -1,6 +1,6 @@
 # Third-party notices
 
-Encounter Crucible has no runtime JavaScript dependencies and bundles no third-party assets.
+Runyth Encounter Crucible has no runtime JavaScript dependencies and bundles no third-party assets.
 
 The module interoperates with:
 

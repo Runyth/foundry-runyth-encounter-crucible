@@ -9,7 +9,7 @@ import {
   combatPreviewFingerprint,
   hasCombatTrackerPanel,
   registerCombatTrackerIntegration
-} from "../module/encounter-crucible/scripts/combat-tracker.js";
+} from "../module/runyth-encounter-crucible/scripts/combat-tracker.js";
 
 const originalGame = globalThis.game;
 const originalHooks = globalThis.Hooks;
@@ -69,7 +69,7 @@ test("Combat Tracker hook and panel insertion remain idempotent", () => {
 
   const root = fakeElement();
   root.querySelector = (selector) => {
-    if (selector === '[data-encounter-crucible-integration="combat-tracker"]') return root._panel ?? null;
+    if (selector === '[data-runyth-encounter-crucible-integration="combat-tracker"]') return root._panel ?? null;
     return null;
   };
 

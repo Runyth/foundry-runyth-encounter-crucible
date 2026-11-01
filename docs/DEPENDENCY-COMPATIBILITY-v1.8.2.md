@@ -1,21 +1,21 @@
-# Dependency compatibility — Encounter Crucible 1.8.2
+# Dependency compatibility — Runyth Encounter Crucible 1.8.2
 
 ## Correct detection contract
 
 Dependent modules should resolve the required package through its permanent technical ID:
 
 ```javascript
-const module = game.modules.get("encounter-crucible");
+const module = game.modules.get("runyth-encounter-crucible");
 const api = module?.api;
 ```
 
-Encounter Crucible 1.8.2 attaches the frozen API object during ES-module evaluation, before Foundry calls dependent `init` callbacks. The same object is attached again idempotently during `init` and remains available during `ready`.
+Runyth Encounter Crucible 1.8.2 attaches the frozen API object during ES-module evaluation, before Foundry calls dependent `init` callbacks. The same object is attached again idempotently during `init` and remains available during `ready`.
 
 Recommended validation:
 
 ```javascript
 if (!module?.active || !api) {
-  throw new Error("Encounter Crucible is missing or inactive.");
+  throw new Error("Runyth Encounter Crucible is missing or inactive.");
 }
 api.assertModuleVersion(">=1.8.1");
 api.assertApiVersion(">=2.7.1");

@@ -1,4 +1,4 @@
-# Automated test results — Encounter Crucible 1.8.8
+# Automated test results — Runyth Encounter Crucible 1.8.8
 
 New 1.8.8 regression coverage verifies:
 

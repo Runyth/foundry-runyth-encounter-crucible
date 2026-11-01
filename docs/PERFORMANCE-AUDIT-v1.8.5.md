@@ -1,4 +1,4 @@
-# Performance audit — Encounter Crucible 1.8.5
+# Performance audit — Runyth Encounter Crucible 1.8.5
 
 The helper registry adds constant-time `Map` registration, lookup, presence, and removal. Listing is linear only in the number of registered companion modules, which is expected to remain small.
 

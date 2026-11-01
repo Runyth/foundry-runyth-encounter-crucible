@@ -1,4 +1,4 @@
-# Patch release report — Encounter Crucible 1.8.3
+# Patch release report — Runyth Encounter Crucible 1.8.3
 
 ## Objective
 

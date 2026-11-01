@@ -1,4 +1,4 @@
-# Incremental best-practice changelog — Encounter Crucible 1.8.7
+# Incremental best-practice changelog — Runyth Encounter Crucible 1.8.7
 
 - Added first-class Actor collection instead of requiring campaign helpers to reach into Foundry collections or duplicate recursive folder logic.
 - Added side-effect-safe authoritative encounter assessment for helper previews.

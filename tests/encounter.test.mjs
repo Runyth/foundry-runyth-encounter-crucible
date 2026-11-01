@@ -9,7 +9,7 @@ import {
   generateEncounter,
   resolveCompositionMode,
   targetBudgetForDifficulty
-} from "../module/encounter-crucible/scripts/core/encounter.js";
+} from "../module/runyth-encounter-crucible/scripts/core/encounter.js";
 
 const party = [
   { id: "pc-a", name: "A", side: "party", level: 5, quantity: 1, contribution: 1, hp: { value: 40, max: 40 }, actions: 1 },

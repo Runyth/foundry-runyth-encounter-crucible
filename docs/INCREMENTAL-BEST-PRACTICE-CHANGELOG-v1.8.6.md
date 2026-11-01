@@ -1,4 +1,4 @@
-# Incremental best-practice changelog — Encounter Crucible 1.8.6
+# Incremental best-practice changelog — Runyth Encounter Crucible 1.8.6
 
 - Replaced duplicated capability metadata assembly with one validated catalog.
 - Preserved array compatibility while supporting direct named lookups.

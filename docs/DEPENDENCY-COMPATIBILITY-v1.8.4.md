@@ -1,4 +1,4 @@
-# Dependency compatibility — Encounter Crucible 1.8.4
+# Dependency compatibility — Runyth Encounter Crucible 1.8.4
 
 ## Released contract
 
@@ -7,16 +7,16 @@
 - Persistent schema: `4`
 - Required capability supplied: `encounterGeneration`
 - Capability version: `1.0.0`
-- Canonical API: `game.modules.get("encounter-crucible")?.api`
+- Canonical API: `game.modules.get("runyth-encounter-crucible")?.api`
 - Existing aliases: `game.encounterCrucible` and `game.encounterCrucibleApi`
 
-Encounter Crucible: Forge requires module `1.8.1` or newer, Helper API `2.7.1` or newer within major version `2`, and the `encounterGeneration` capability. Version 1.8.4 satisfies all three requirements.
+Runyth Encounter Crucible: Forge requires module `1.8.1` or newer, Helper API `2.7.1` or newer within major version `2`, and the `encounterGeneration` capability. Version 1.8.4 satisfies all three requirements.
 
 ## Recommended dependency check
 
 ```javascript
-const api = game.modules.get("encounter-crucible")?.api;
-if (!api) throw new Error("Encounter Crucible is unavailable.");
+const api = game.modules.get("runyth-encounter-crucible")?.api;
+if (!api) throw new Error("Runyth Encounter Crucible is unavailable.");
 api.assertModuleVersion(">=1.8.1");
 api.assertApiVersion(">=2.7.1 <3.0.0");
 api.assertCapability("encounterGeneration");

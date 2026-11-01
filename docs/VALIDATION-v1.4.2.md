@@ -1,4 +1,4 @@
-# Encounter Crucible v1.4.2 validation
+# Runyth Encounter Crucible v1.4.2 validation
 
 ## Reproducible commands
 

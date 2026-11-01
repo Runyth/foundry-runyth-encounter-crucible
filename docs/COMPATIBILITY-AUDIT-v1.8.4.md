@@ -1,8 +1,8 @@
-# Compatibility audit — Encounter Crucible 1.8.4
+# Compatibility audit — Runyth Encounter Crucible 1.8.4
 
 ## Reported defect
 
-Encounter Crucible exposed Helper API `2.7.1` and working top-level generation methods, but Encounter Crucible: Forge rejected the integration because the API did not expose the named `encounterGeneration` capability.
+Runyth Encounter Crucible exposed Helper API `2.7.1` and working top-level generation methods, but Runyth Encounter Crucible: Forge rejected the integration because the API did not expose the named `encounterGeneration` capability.
 
 ## Root cause
 
@@ -12,8 +12,8 @@ The core API advertised versions and individual generation methods but had no ex
 
 Affected runtime files:
 
-- `module/encounter-crucible/scripts/api.js`
-- `module/encounter-crucible/scripts/core/constants.js`
+- `module/runyth-encounter-crucible/scripts/api.js`
+- `module/runyth-encounter-crucible/scripts/core/constants.js`
 
 Corrections:
 
@@ -38,4 +38,4 @@ Corrections:
 
 ## External errors
 
-No workaround was added for the separate Forge `sliderToTarget` defect or for errors attributed to unrelated modules. This patch corrects only Encounter Crucible's missing capability contract.
+No workaround was added for the separate Forge `sliderToTarget` defect or for errors attributed to unrelated modules. This patch corrects only Runyth Encounter Crucible's missing capability contract.

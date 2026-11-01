@@ -1,4 +1,4 @@
-# Encounter Crucible v1.4.2 compatibility and quality audit
+# Runyth Encounter Crucible v1.4.2 compatibility and quality audit
 
 ## Scope
 
@@ -15,7 +15,7 @@ The complete v1.4.1 production tree, tests, manifest, templates, styles, localiz
 | Workshop rerenders discarded unsaved filters, count limits, tactical choices, and candidate selections | `scripts/apps/workshop.js`, `templates/workshop.hbs` | Form values were reconstructed from defaults instead of an owned application state | Added durable in-window form state, rerender-safe selection capture, explicit Apply/Clear filters, and Enter-to-filter behavior |
 | Very large Actor folder and candidate sets were awkward and potentially expensive | `scripts/apps/workshop.js`, `scripts/services/folder-service.js`, template, localization | Folder labels lacked ancestry/search, all candidates rendered at once, and recursive traversal repeatedly scanned prior descendants | Added path-aware folder filtering, name/CR candidate filtering, a 300-row render cap with counts, preserved hidden selections, and cycle-safe indexed folder traversal |
 | Settings-menu Workshop and normal Workshop shared an application ID | `scripts/apps/workshop.js` | The settings launcher inherited the primary ID | Assigned a unique settings-launcher ID and class |
-| Long button text and wide tables could clip in narrow ApplicationV2 windows | templates and `styles/encounter-crucible.css` | Viewport media queries alone do not reflect a resized Foundry window; buttons and tables lacked explicit overflow safeguards | Added container queries, wrapping, padding, busy-state styling, and horizontal table wrappers, all beneath module-owned roots |
+| Long button text and wide tables could clip in narrow ApplicationV2 windows | templates and `styles/runyth-encounter-crucible.css` | Viewport media queries alone do not reflect a resized Foundry window; buttons and tables lacked explicit overflow safeguards | Added container queries, wrapping, padding, busy-state styling, and horizontal table wrappers, all beneath module-owned roots |
 | Slow actions offered no feedback and repeated submits could be attempted | `scripts/apps/application-lifecycle.js` | Pending-action deduplication existed without an initiating-control busy state | The initiating button is disabled, marked `aria-busy`, styled, and restored in `finally`; listeners remain abortable and root-owned |
 | D&D 5e 5.3 spell-slot objects may omit an explicit level field | `scripts/services/actor-normalizer.js` | Weighting relied primarily on `slot.level` | Slot level is derived from canonical `spell1` through `spell9` keys when necessary |
 | Arbitrary UUIDs could be normalized as though they were Actor-bearing Documents | `scripts/services/actor-normalizer.js` | Resolution accepted any object with a coincidental shape | UUID normalization now positively requires an Actor or Token document |
@@ -32,7 +32,7 @@ The complete v1.4.1 production tree, tests, manifest, templates, styles, localiz
 - All actions remain `ec-*`; no reserved generic `tab` action is used.
 - Hook registration remains one-time and limited to module lifecycle, Scene Controls, Combat Tracker, relevant Combat documents, relevant Actors, and canvas readiness.
 - Native DOM APIs are used; no jQuery assumption or wrapper remains.
-- CSS remains scoped to `.encounter-crucible` or `.encounter-crucible-tracker`; no global window chrome, form, button, accessibility, Token nameplate, or z-index rule exists.
+- CSS remains scoped to `.runyth-encounter-crucible` or `.runyth-encounter-crucible-tracker`; no global window chrome, form, button, accessibility, Token nameplate, or z-index rule exists.
 - There is no Actor-sheet, Item-sheet, Tidy-sheet, advancement, level-up, rest, roll, activity, effect, importer, Token HUD, canvas-overlay, Chat-render, raw keyboard, or socket integration.
 - Scene Controls retain the Foundry v13 record-shaped `controls.tokens.tools` contract and idempotent tool insertion.
 - Chat retains one explicit `ChatMessage.create()` path and no render hook.

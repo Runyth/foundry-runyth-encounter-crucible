@@ -6,7 +6,7 @@ import path from "node:path";
 import test from "node:test";
 
 const root = path.resolve(new URL("..", import.meta.url).pathname);
-const moduleRoot = path.join(root, "module", "encounter-crucible");
+const moduleRoot = path.join(root, "module", "runyth-encounter-crucible");
 
 async function filesBelow(directory) {
   const results = [];
@@ -67,7 +67,7 @@ test("Application actions are module-specific and listener lifecycle is owned", 
 });
 
 test("CSS selectors remain module-scoped and do not alter core window chrome", async () => {
-  const css = await readFile(path.join(moduleRoot, "styles", "encounter-crucible.css"), "utf8");
+  const css = await readFile(path.join(moduleRoot, "styles", "runyth-encounter-crucible.css"), "utf8");
   const globallyForbidden = [
     /^\s*\.window-header\b/m,
     /^\s*\.window-content\b/m,
@@ -81,7 +81,7 @@ test("CSS selectors remain module-scoped and do not alter core window chrome", a
   ];
   for (const pattern of globallyForbidden) assert.doesNotMatch(css, pattern);
   for (const line of css.split("\n")) {
-    if (line.includes(".ec-")) assert.match(line, /\.encounter-crucible\s+\.ec-/);
+    if (line.includes(".ec-")) assert.match(line, /\.runyth-encounter-crucible\s+\.ec-/);
   }
   assert.doesNotMatch(css, /z-index\s*:/);
   assert.doesNotMatch(css, /\.window-header|\.header-control|\.window-title/);
@@ -92,15 +92,15 @@ test("CSS selectors remain module-scoped and do not alter core window chrome", a
 test("Workshop filters and narrow-window safeguards remain present", async () => {
   const template = await readFile(path.join(moduleRoot, "templates", "workshop.hbs"), "utf8");
   const workshop = await readFile(path.join(moduleRoot, "scripts", "apps", "workshop.js"), "utf8");
-  const css = await readFile(path.join(moduleRoot, "styles", "encounter-crucible.css"), "utf8");
+  const css = await readFile(path.join(moduleRoot, "styles", "runyth-encounter-crucible.css"), "utf8");
 
   assert.match(template, /name="folderSearch"/);
   assert.match(template, /name="candidateSearch"/);
   assert.match(template, /class="ec-table-scroll"/);
   assert.match(workshop, /CANDIDATE_RENDER_LIMIT = 300/);
-  assert.match(workshop, /encounter-crucible-settings-workshop/);
+  assert.match(workshop, /runyth-encounter-crucible-settings-workshop/);
   assert.match(css, /overflow-wrap:\s*anywhere/);
-  assert.match(css, /@container encounter-crucible-window/);
+  assert.match(css, /@container runyth-encounter-crucible-window/);
   assert.match(css, /\.ec-table-scroll\s*\{/);
   assert.match(template, /data-ec-generation-progress/);
   assert.match(template, /ec-cancel-generation/);

@@ -3,7 +3,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { createCapabilityCatalog } from "../module/encounter-crucible/scripts/core/capability-catalog.js";
+import { createCapabilityCatalog } from "../module/runyth-encounter-crucible/scripts/core/capability-catalog.js";
 
 test("capability catalog supports array, property, map, and descriptor discovery", () => {
   const generation = Object.freeze(() => "generated");

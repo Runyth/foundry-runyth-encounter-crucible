@@ -3,8 +3,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { createApi } from "../module/encounter-crucible/scripts/api.js";
-import { createEncounterDefinition } from "../module/encounter-crucible/scripts/core/encounter.js";
+import { createApi } from "../module/runyth-encounter-crucible/scripts/api.js";
+import { createEncounterDefinition } from "../module/runyth-encounter-crucible/scripts/core/encounter.js";
 
 const originalGame = globalThis.game;
 const originalHooks = globalThis.Hooks;
@@ -167,9 +167,9 @@ test("Helper API compatibility metadata is exposed through stable aliases", asyn
   assert.equal(api.helperVersion, "2.7.5");
   assert.equal(api.API_VERSION, "2.7.5");
   assert.equal(api.HELPER_API_VERSION, "2.7.5");
-  assert.equal(api.moduleVersion, "1.8.9");
-  assert.equal(api.coreVersion, "1.8.9");
-  assert.equal(api.MODULE_VERSION, "1.8.9");
+  assert.equal(api.moduleVersion, "1.9.0");
+  assert.equal(api.coreVersion, "1.9.0");
+  assert.equal(api.MODULE_VERSION, "1.9.0");
   assert.equal(api.helperApi.version, "2.7.5");
   assert.equal(api.helperAPI, api.helperApi);
   assert.equal(api.compatibility.helperApiVersion, "2.7.5");
@@ -298,7 +298,7 @@ test("helper-module registration is exposed through all Forge-compatible API sur
   const api = createApi({ openDashboard() {}, openWorkshop() {}, rememberEncounter() {} });
   const forgeApi = { version: "1.0.1", capabilities: ["encounterGeneration"] };
   const registration = api.registerHelperModule({
-    id: "encounter-crucible-forge",
+    id: "runyth-encounter-crucible-forge",
     api: forgeApi
   });
 
@@ -312,10 +312,10 @@ test("helper-module registration is exposed through all Forge-compatible API sur
   assert.equal(api.hasCapability("helperModuleRegistry"), true);
   assert.equal(api.getCapability("helperModuleRegistry"), api.helperModules);
   assert.equal(api.capabilityMap.helperModuleRegistry, true);
-  assert.equal(api.hasHelperModule("encounter-crucible-forge"), true);
-  assert.equal(api.hasHelper("encounter-crucible-forge"), true);
-  assert.equal(api.getHelperModule("encounter-crucible-forge"), registration);
-  assert.equal(api.getHelper("encounter-crucible-forge"), registration);
+  assert.equal(api.hasHelperModule("runyth-encounter-crucible-forge"), true);
+  assert.equal(api.hasHelper("runyth-encounter-crucible-forge"), true);
+  assert.equal(api.getHelperModule("runyth-encounter-crucible-forge"), registration);
+  assert.equal(api.getHelper("runyth-encounter-crucible-forge"), registration);
   assert.deepEqual(api.listHelperModules(), [registration]);
   assert.deepEqual(api.listHelpers(), [registration]);
   assert.equal(events.length, 1);

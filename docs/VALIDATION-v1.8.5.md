@@ -1,4 +1,4 @@
-# Validation — Encounter Crucible 1.8.5
+# Validation — Runyth Encounter Crucible 1.8.5
 
 ## Automated status
 
@@ -18,6 +18,6 @@
 
 ## Runtime evidence
 
-The supplied Foundry 13.351 and D&D 5e 5.3.3 startup log shows Encounter Crucible 1.8.4 initializing successfully before Forge reports `helper-registry-missing`. No Encounter Crucible-owned deprecated API warning or runtime exception appears in the log.
+The supplied Foundry 13.351 and D&D 5e 5.3.3 startup log shows Runyth Encounter Crucible 1.8.4 initializing successfully before Forge reports `helper-registry-missing`. No Runyth Encounter Crucible-owned deprecated API warning or runtime exception appears in the log.
 
 A licensed Foundry browser runtime is unavailable in the build environment, so live Forge registration against 1.8.5 is covered by the manual test plan and is not falsely claimed as executed here.

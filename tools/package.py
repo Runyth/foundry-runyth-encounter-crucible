@@ -14,15 +14,15 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 BUILD = ROOT / "build"
-BUILD_MODULE = BUILD / "encounter-crucible"
-DOC_STAGE = BUILD / "encounter-crucible-documentation"
+BUILD_MODULE = BUILD / "runyth-encounter-crucible"
+DOC_STAGE = BUILD / "runyth-encounter-crucible-documentation"
 DIST = ROOT / "dist"
 VERSION = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))["version"]
-INSTALL_NAME = f"encounter-crucible-v{VERSION}-mod.zip"
-SOURCE_NAME = f"encounter-crucible-v{VERSION}-src.zip"
-DOCUMENTATION_NAME = f"encounter-crucible-v{VERSION}-doc.zip"
-DOCUMENTATION_ROOT = f"encounter-crucible-v{VERSION}-doc"
-SOURCE_ROOT = f"encounter-crucible-v{VERSION}-src"
+INSTALL_NAME = f"runyth-encounter-crucible-v{VERSION}-mod.zip"
+SOURCE_NAME = f"runyth-encounter-crucible-v{VERSION}-src.zip"
+DOCUMENTATION_NAME = f"runyth-encounter-crucible-v{VERSION}-doc.zip"
+DOCUMENTATION_ROOT = f"runyth-encounter-crucible-v{VERSION}-doc"
+SOURCE_ROOT = f"runyth-encounter-crucible-v{VERSION}-src"
 FIXED_TIME = (2026, 8, 4, 0, 0, 0)
 EXCLUDED_PARTS = {".git", "build", "dist", "node_modules", "coverage", "__pycache__"}
 
@@ -167,8 +167,8 @@ def stage_documentation(install: Path, source: Path, test_count: int):
       "documentation": DOCUMENTATION_NAME
     },
     "roots": {
-      "installable": "encounter-crucible",
-      "source": "encounter-crucible",
+      "installable": "runyth-encounter-crucible",
+      "source": "runyth-encounter-crucible",
       "documentation": DOCUMENTATION_ROOT
     },
     "files": {
@@ -187,7 +187,7 @@ def stage_documentation(install: Path, source: Path, test_count: int):
     newline="\n"
   )
   (DOC_STAGE / "AUTOMATED-VALIDATION.md").write_text(
-    f"""# Automated validation — Encounter Crucible {VERSION}
+    f"""# Automated validation — Runyth Encounter Crucible {VERSION}
 
 - Clean `npm ci`: required by the release workflow.
 - Formatting check: passed.
@@ -210,7 +210,7 @@ A licensed Foundry browser runtime was unavailable and live in-world testing is 
     newline="\n"
   )
   (DOC_STAGE / "BUILD-REPORT.md").write_text(
-    f"""# Encounter Crucible {VERSION} build report
+    f"""# Runyth Encounter Crucible {VERSION} build report
 
 ## Release artifacts
 
@@ -220,7 +220,7 @@ A licensed Foundry browser runtime was unavailable and live in-world testing is 
 
 ## Identity
 
-- Module ID: `encounter-crucible`
+- Module ID: `runyth-encounter-crucible`
 - Module version: `{VERSION}`
 - Helper API: `2.7.5`
 - Persistent schema: `4`
@@ -228,8 +228,8 @@ A licensed Foundry browser runtime was unavailable and live in-world testing is 
 
 ## Archive qualification
 
-- Installable archive contains exactly one `encounter-crucible/` root and {install_count} runtime files.
-- Source archive contains exactly one `encounter-crucible/` root and {source_count} repository files.
+- Installable archive contains exactly one `runyth-encounter-crucible/` root and {install_count} runtime files.
+- Source archive contains exactly one `runyth-encounter-crucible/` root and {source_count} repository files.
 - Installable archive excludes tests, tools, source-only documentation, package metadata, and nested archives.
 - Source archive includes runtime source, Worker and fallback implementations, tests, locked package metadata, tools, documentation, and deterministic packaging.
 - Source archive does not wrap the installable or documentation ZIP.
@@ -255,9 +255,9 @@ def main():
   source = DIST / SOURCE_NAME
   documentation = DIST / DOCUMENTATION_NAME
 
-  write_zip(install, BUILD_MODULE, "encounter-crucible")
+  write_zip(install, BUILD_MODULE, "runyth-encounter-crucible")
   write_zip(source, ROOT, SOURCE_ROOT)
-  validate_zip(install, "encounter-crucible", "install")
+  validate_zip(install, "runyth-encounter-crucible", "install")
   validate_zip(source, SOURCE_ROOT, "source")
 
   test_count = count_tests()
@@ -265,7 +265,7 @@ def main():
   write_zip(documentation, DOC_STAGE, DOCUMENTATION_ROOT)
   validate_zip(documentation, DOCUMENTATION_ROOT, "documentation")
 
-  checksums = DIST / f"encounter-crucible-v{VERSION}-SHA256SUMS.txt"
+  checksums = DIST / f"runyth-encounter-crucible-v{VERSION}-SHA256SUMS.txt"
   checksums.write_text(
     "".join(f"{sha256(path)}  {path.name}\n" for path in [source, install, documentation]),
     encoding="utf-8",

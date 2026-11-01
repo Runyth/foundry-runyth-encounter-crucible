@@ -3,7 +3,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { registerSceneControlsIntegration, upsertSceneControlTool } from "../module/encounter-crucible/scripts/integrations/scene-controls.js";
+import { registerSceneControlsIntegration, upsertSceneControlTool } from "../module/runyth-encounter-crucible/scripts/integrations/scene-controls.js";
 
 const originalGame = globalThis.game;
 const originalHooks = globalThis.Hooks;
@@ -26,10 +26,10 @@ test("Scene Controls use the Foundry V13 record shape and remain idempotent", ()
 
   assert.equal(upsertSceneControlTool(controls, () => { opens += 1; }), true);
   assert.equal(upsertSceneControlTool(controls, () => { opens += 1; }), false);
-  assert.deepEqual(Object.keys(controls.tokens.tools).sort(), ["encounter-crucible", "select"]);
-  assert.equal(controls.tokens.tools["encounter-crucible"].order, 3);
-  assert.equal(controls.tokens.tools["encounter-crucible"].visible, true);
-  controls.tokens.tools["encounter-crucible"].onChange();
+  assert.deepEqual(Object.keys(controls.tokens.tools).sort(), ["runyth-encounter-crucible", "select"]);
+  assert.equal(controls.tokens.tools["runyth-encounter-crucible"].order, 3);
+  assert.equal(controls.tokens.tools["runyth-encounter-crucible"].visible, true);
+  controls.tokens.tools["runyth-encounter-crucible"].onChange();
   assert.equal(opens, 1);
 });
 

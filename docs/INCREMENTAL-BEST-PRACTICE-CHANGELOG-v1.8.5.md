@@ -1,4 +1,4 @@
-# Incremental best-practice changelog — Encounter Crucible 1.8.5
+# Incremental best-practice changelog — Runyth Encounter Crucible 1.8.5
 
 - Added a narrowly owned companion-module registry rather than asking dependants to mutate core API objects.
 - Kept the public API frozen while allowing controlled internal registry state.

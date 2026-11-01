@@ -5,10 +5,10 @@ import path from "node:path";
 import { bundleEntry } from "./bundle.mjs";
 
 const root = path.resolve(new URL("..", import.meta.url).pathname);
-const source = path.join(root, "module", "encounter-crucible");
+const source = path.join(root, "module", "runyth-encounter-crucible");
 const sourceScripts = path.join(source, "scripts");
 const buildRoot = path.join(root, "build");
-const target = path.join(buildRoot, "encounter-crucible");
+const target = path.join(buildRoot, "runyth-encounter-crucible");
 const targetScripts = path.join(target, "scripts");
 
 await rm(buildRoot, { recursive: true, force: true });
@@ -23,13 +23,13 @@ const mainBundle = await bundleEntry({
   sourceRoot: sourceScripts,
   entry: "main.js",
   destination: path.join(targetScripts, "main.js"),
-  banner: "// Encounter Crucible runtime bundle. Do not edit this generated file."
+  banner: "// Runyth Encounter Crucible runtime bundle. Do not edit this generated file."
 });
 const workerBundle = await bundleEntry({
   sourceRoot: sourceScripts,
   entry: "workers/encounter-generator-worker.js",
   destination: path.join(targetScripts, "workers", "encounter-generator-worker.js"),
-  banner: "// Encounter Crucible generation Worker bundle. Do not edit this generated file."
+  banner: "// Runyth Encounter Crucible generation Worker bundle. Do not edit this generated file."
 });
 
 const manifest = JSON.parse(await readFile(path.join(target, "module.json"), "utf8"));

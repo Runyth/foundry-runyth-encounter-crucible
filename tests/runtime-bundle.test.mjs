@@ -9,7 +9,7 @@ import { pathToFileURL } from "node:url";
 import { bundleEntry } from "../tools/bundle.mjs";
 
 const root = path.resolve(new URL("..", import.meta.url).pathname);
-const sourceScripts = path.join(root, "module", "encounter-crucible", "scripts");
+const sourceScripts = path.join(root, "module", "runyth-encounter-crucible", "scripts");
 
 function installFoundryMocks() {
   const previous = new Map();
@@ -32,7 +32,7 @@ function installFoundryMocks() {
     async _onRender() {}
   }
   const HandlebarsApplicationMixin = (Base) => class extends Base {};
-  const moduleRecord = { id: "encounter-crucible", version: "1.8.8", api: null };
+  const moduleRecord = { id: "runyth-encounter-crucible", version: "1.8.8", api: null };
   const settingsValues = new Map([
     ["includeCurrentResources", true],
     ["rememberLastEncounter", false],
@@ -46,7 +46,7 @@ function installFoundryMocks() {
     utils: { getRoute: (route) => `/foundry-prefix/${route}` }
   };
   globalThis.game = {
-    modules: new Map([["encounter-crucible", moduleRecord]]),
+    modules: new Map([["runyth-encounter-crucible", moduleRecord]]),
     user: { isGM: true },
     system: { id: "dnd5e" },
     actors: { contents: [] },
@@ -87,7 +87,7 @@ function installFoundryMocks() {
 }
 
 test("installable main bundle is self-contained and exposes Helper API before init", async () => {
-  const temp = await mkdtemp(path.join(os.tmpdir(), "encounter-crucible-bundle-"));
+  const temp = await mkdtemp(path.join(os.tmpdir(), "runyth-encounter-crucible-bundle-"));
   const destination = path.join(temp, "main.mjs");
   const mocks = installFoundryMocks();
   try {
@@ -95,7 +95,7 @@ test("installable main bundle is self-contained and exposes Helper API before in
     assert.ok(result.moduleCount >= 20);
     const content = await readFile(destination, "utf8");
     assert.doesNotMatch(content, /\bimport\s+\{/);
-    assert.match(content, /Generated deterministically from modular Encounter Crucible source/);
+    assert.match(content, /Generated deterministically from modular Runyth Encounter Crucible source/);
 
     await import(`${pathToFileURL(destination).href}?test=${Date.now()}`);
     const api = mocks.moduleRecord.api;
@@ -109,10 +109,10 @@ test("installable main bundle is self-contained and exposes Helper API before in
 
     const forgeApi = Object.freeze({ id: "forge-helper" });
     const orphanApi = Object.freeze({ id: "campaign-helper-helper" });
-    assert.equal(api.registerHelperModule("encounter-crucible-forge", "1.0.0", forgeApi).api, forgeApi);
-    assert.equal(api.registerHelperModule("encounter-crucible-campaign-helper", "1.0.0", orphanApi).api, orphanApi);
-    assert.equal(api.hasHelperModule("encounter-crucible-forge"), true);
-    assert.equal(api.hasHelperModule("encounter-crucible-campaign-helper"), true);
+    assert.equal(api.registerHelperModule("runyth-encounter-crucible-forge", "1.0.0", forgeApi).api, forgeApi);
+    assert.equal(api.registerHelperModule("runyth-encounter-crucible-campaign-helper", "1.0.0", orphanApi).api, orphanApi);
+    assert.equal(api.hasHelperModule("runyth-encounter-crucible-forge"), true);
+    assert.equal(api.hasHelperModule("runyth-encounter-crucible-campaign-helper"), true);
   } finally {
     mocks.restore();
     await rm(temp, { recursive: true, force: true });
@@ -120,13 +120,13 @@ test("installable main bundle is self-contained and exposes Helper API before in
 });
 
 test("generation Worker URL uses Foundry's route-aware v13 utility", async () => {
-  const module = await import("../module/encounter-crucible/scripts/services/generation-service.js");
+  const module = await import("../module/runyth-encounter-crucible/scripts/services/generation-service.js");
   const previousFoundry = globalThis.foundry;
   try {
     globalThis.foundry = { utils: { getRoute: (route) => `/prefix/${route}` } };
     assert.equal(
       module.generationWorkerUrl(),
-      "/prefix/modules/encounter-crucible/scripts/workers/encounter-generator-worker.js"
+      "/prefix/modules/runyth-encounter-crucible/scripts/workers/encounter-generator-worker.js"
     );
   } finally {
     globalThis.foundry = previousFoundry;

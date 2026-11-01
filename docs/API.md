@@ -1,9 +1,9 @@
 # Public API
 
-The canonical API is available as soon as Encounter Crucible's ES module has loaded:
+The canonical API is available as soon as Runyth Encounter Crucible's ES module has loaded:
 
 ```javascript
-const api = game.modules.get("encounter-crucible")?.api;
+const api = game.modules.get("runyth-encounter-crucible")?.api;
 ```
 
 Aliases:
@@ -54,8 +54,8 @@ Requirements may be exact (`2.7.1`), comparative (`>=2.7.1`), bounded (`>=2.7.1 
 Recommended dependant startup:
 
 ```javascript
-const api = game.modules.get("encounter-crucible")?.api;
-if (!api) throw new Error("Encounter Crucible is unavailable.");
+const api = game.modules.get("runyth-encounter-crucible")?.api;
+if (!api) throw new Error("Runyth Encounter Crucible is unavailable.");
 api.assertModuleVersion(">=1.8.1");
 api.assertApiVersion(">=2.7.1");
 await api.whenReady();
@@ -65,10 +65,10 @@ No existing method signature or extension contract changed in this patch.
 
 ## Capability discovery
 
-Encounter Crucible 1.8.8 exposes the named `encounterGeneration` capability required by Forge and other generation helpers:
+Runyth Encounter Crucible 1.8.8 exposes the named `encounterGeneration` capability required by Forge and other generation helpers:
 
 ```javascript
-const api = game.modules.get("encounter-crucible")?.api;
+const api = game.modules.get("runyth-encounter-crucible")?.api;
 api.assertApiVersion(">=2.7.1 <3.0.0");
 api.assertCapability("encounterGeneration");
 const generation = api.encounterGeneration;
@@ -100,15 +100,15 @@ Existing top-level methods are retained with the same signatures. GM-only method
 
 ## Actor collection and assessment capabilities
 
-Encounter Crucible 1.8.8 exposes two additional Helper API capabilities used by campaign-specific helpers such as a campaign helper:
+Runyth Encounter Crucible 1.8.8 exposes two additional Helper API capabilities used by campaign-specific helpers such as a campaign helper:
 
-- `collectActors` (`1.0.0`) — GM-authorized Actor collection. With no options it returns world Actor Documents. It accepts a folder id or `{ folderId, recursive, types, normalized, side, contribution }`. Set `normalized: true` to return Encounter Crucible participant data using the core normalizer. Existing `actorCandidates()` remains the normalized NPC-only convenience API.
-- `assessEncounter` (`1.0.0`) — authoritative Encounter Crucible assessment for a caller-supplied encounter definition. It delegates to the normal calculation engine and defaults to `remember: false` and `emitHooks: false`, preventing helper previews from persisting transient candidates or emitting duplicate lifecycle hooks. Explicit caller options may override those defaults.
+- `collectActors` (`1.0.0`) — GM-authorized Actor collection. With no options it returns world Actor Documents. It accepts a folder id or `{ folderId, recursive, types, normalized, side, contribution }`. Set `normalized: true` to return Runyth Encounter Crucible participant data using the core normalizer. Existing `actorCandidates()` remains the normalized NPC-only convenience API.
+- `assessEncounter` (`1.0.0`) — authoritative Runyth Encounter Crucible assessment for a caller-supplied encounter definition. It delegates to the normal calculation engine and defaults to `remember: false` and `emitHooks: false`, preventing helper previews from persisting transient candidates or emitting duplicate lifecycle hooks. Explicit caller options may override those defaults.
 
 Both are available through direct API properties, `helperApi`, `features`, `capabilities`, `capabilityMap`, `capabilityVersions`, and `capabilityDescriptors`. Their function objects also expose `supports(requirement)` and `assertVersion(requirement)`.
 
 ```javascript
-const core = game.modules.get("encounter-crucible")?.api;
+const core = game.modules.get("runyth-encounter-crucible")?.api;
 core.assertCapability("collectActors");
 core.assertCapability("assessEncounter");
 
@@ -119,12 +119,12 @@ const assessment = await core.assessEncounter(encounter);
 
 ## Helper-module registry
 
-Encounter Crucible exposes a lifecycle-safe helper registry for Forge and other companion modules. The canonical registration form is:
+Runyth Encounter Crucible exposes a lifecycle-safe helper registry for Forge and other companion modules. The canonical registration form is:
 
 ```javascript
-const core = game.modules.get("encounter-crucible")?.api;
+const core = game.modules.get("runyth-encounter-crucible")?.api;
 const registration = core.registerHelperModule({
-  id: "encounter-crucible-forge",
+  id: "runyth-encounter-crucible-forge",
   version: "1.0.0",
   api: forgeApi,
   capabilities: ["encounterGeneration"]
@@ -248,4 +248,4 @@ Each lifecycle hook is emitted once. Passive Combat Tracker previews suppress an
 
 ## Sockets
 
-Encounter Crucible v1.8.8 registers no socket channel or socket messages. `module.json` declares `"socket": false`.
+Runyth Encounter Crucible v1.8.8 registers no socket channel or socket messages. `module.json` declares `"socket": false`.

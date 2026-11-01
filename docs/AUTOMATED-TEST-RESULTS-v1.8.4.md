@@ -1,4 +1,4 @@
-# Automated test results — Encounter Crucible 1.8.4
+# Automated test results — Runyth Encounter Crucible 1.8.4
 
 ## Repository gate
 

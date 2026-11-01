@@ -4,7 +4,7 @@
 
 - Foundry VTT: minimum `13`, verified `13.351`, maximum `13`
 - D&D 5e: minimum `4.2.0`, manifest verified `5.2.2`, declared maximum `5.3.x`
-- Encounter Crucible Helper API: `2.7.5`
+- Runyth Encounter Crucible Helper API: `2.7.5`
 - Persistent schema: `4`
 
 D&D 5e 5.3.x is included in the declared maximum after static validation of the structured Actor paths used by the adapter, including spell-slot keys. The manifest verified value remains 5.2.2 because this release environment did not contain a licensed Foundry browser runtime. The current official D&D 5e package and release information is available at https://foundryvtt.com/packages/dnd5e and https://github.com/foundryvtt/dnd5e/releases.
@@ -52,6 +52,6 @@ Relevant Foundry v13 references:
 
 ## Other modules
 
-Application styling is scoped to `.encounter-crucible`; the Combat Tracker integration uses the unique `.encounter-crucible-tracker` root. The module does not alter Foundry window chrome, generic buttons, dialogs, sheets, Token nameplates, or z-index values.
+Application styling is scoped to `.runyth-encounter-crucible`; the Combat Tracker integration uses the unique `.runyth-encounter-crucible-tracker` root. The module does not alter Foundry window chrome, generic buttons, dialogs, sheets, Token nameplates, or z-index values.
 
-No workaround is included for errors attributed to another package. A warning produced by another module while Encounter Crucible invokes a normal Foundry workflow remains that package's responsibility.
+No workaround is included for errors attributed to another package. A warning produced by another module while Runyth Encounter Crucible invokes a normal Foundry workflow remains that package's responsibility.

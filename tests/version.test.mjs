@@ -3,7 +3,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { assertVersion, compareVersions, satisfiesVersion } from "../module/encounter-crucible/scripts/core/version.js";
+import { assertVersion, compareVersions, satisfiesVersion } from "../module/runyth-encounter-crucible/scripts/core/version.js";
 
 test("semantic versions compare numerically instead of lexically", () => {
   assert.equal(compareVersions("1.8.2", "1.8.1"), 1);

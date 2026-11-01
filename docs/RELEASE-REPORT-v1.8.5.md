@@ -1,12 +1,12 @@
-# Release report — Encounter Crucible 1.8.5
+# Release report — Runyth Encounter Crucible 1.8.5
 
 ## Objective
 
-Restore complete Encounter Crucible: Forge integration after live Foundry logs showed `helper-registry-missing` despite compatible core and Helper API versions and a present generation capability.
+Restore complete Runyth Encounter Crucible: Forge integration after live Foundry logs showed `helper-registry-missing` despite compatible core and Helper API versions and a present generation capability.
 
 ## Result
 
-Encounter Crucible now exposes a versioned helper-module registry through canonical and compatibility aliases. Forge can register itself without mutating the frozen core API or relying on initialization order. All existing module behavior and persistent data remain compatible.
+Runyth Encounter Crucible now exposes a versioned helper-module registry through canonical and compatibility aliases. Forge can register itself without mutating the frozen core API or relying on initialization order. All existing module behavior and persistent data remain compatible.
 
 ## Release identity
 

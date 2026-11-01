@@ -7,7 +7,7 @@ import {
   createCombatFromTokens,
   placeAndCreateCombat,
   placeEncounter
-} from "../module/encounter-crucible/scripts/services/placement-service.js";
+} from "../module/runyth-encounter-crucible/scripts/services/placement-service.js";
 
 const originalGame = globalThis.game;
 const originalCanvas = globalThis.canvas;

@@ -1,8 +1,8 @@
-# Compatibility audit — Encounter Crucible 1.8.7
+# Compatibility audit — Runyth Encounter Crucible 1.8.7
 
 ## Reported defect
 
-Encounter Crucible 1.8.6 exposed Helper API 2.7.4 but a campaign helper correctly rejected integration because two required public capabilities were absent: `collectActors` and `assessEncounter`.
+Runyth Encounter Crucible 1.8.6 exposed Helper API 2.7.4 but a campaign helper correctly rejected integration because two required public capabilities were absent: `collectActors` and `assessEncounter`.
 
 This was a real core API gap, not a dependant-side version-detection error.
 

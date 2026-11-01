@@ -1,14 +1,14 @@
-# Dependency compatibility — Encounter Crucible 1.8.5
+# Dependency compatibility — Runyth Encounter Crucible 1.8.5
 
 ## Resolved failure
 
-The supplied Foundry startup log showed Encounter Crucible 1.8.4 initializing successfully with Helper API 2.7.2, followed by Encounter Crucible: Forge rejecting the integration with reason `helper-registry-missing`.
+The supplied Foundry startup log showed Runyth Encounter Crucible 1.8.4 initializing successfully with Helper API 2.7.2, followed by Runyth Encounter Crucible: Forge rejecting the integration with reason `helper-registry-missing`.
 
 The module and API versions already satisfied Forge's minimums, and `encounterGeneration` was present. The missing contract was helper-module registration.
 
 ## Released contract
 
-- Encounter Crucible module: `1.8.5`
+- Runyth Encounter Crucible module: `1.8.5`
 - Helper API: `2.7.3`
 - Persistent schema: `4`
 - Encounter-generation capability: `1.0.0`
@@ -17,14 +17,14 @@ The module and API versions already satisfied Forge's minimums, and `encounterGe
 Canonical Forge-style registration:
 
 ```javascript
-const core = game.modules.get("encounter-crucible")?.api;
+const core = game.modules.get("runyth-encounter-crucible")?.api;
 core.assertModuleVersion(">=1.8.1");
 core.assertApiVersion(">=2.7.1 <3.0.0");
 core.assertCapability("encounterGeneration");
 core.assertCapability("helperModuleRegistry");
 
 const registration = core.registerHelperModule({
-  id: "encounter-crucible-forge",
+  id: "runyth-encounter-crucible-forge",
   version: "1.0.0",
   api: forgeApi,
   capabilities: ["encounterGeneration"]

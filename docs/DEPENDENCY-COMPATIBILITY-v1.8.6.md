@@ -1,4 +1,4 @@
-# Dependency compatibility — Encounter Crucible 1.8.6
+# Dependency compatibility — Runyth Encounter Crucible 1.8.6
 
 ## Released contract
 

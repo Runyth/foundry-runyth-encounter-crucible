@@ -7,7 +7,7 @@ import {
   activeCombatReferencesActor,
   encounterReferencesActor,
   registerRuntimeRefreshHooks
-} from "../module/encounter-crucible/scripts/integrations/runtime-refresh.js";
+} from "../module/runyth-encounter-crucible/scripts/integrations/runtime-refresh.js";
 
 const originalGame = globalThis.game;
 const originalHooks = globalThis.Hooks;

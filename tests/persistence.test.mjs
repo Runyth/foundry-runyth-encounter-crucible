@@ -3,7 +3,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { encounterHtml } from "../module/encounter-crucible/scripts/services/persistence-service.js";
+import { encounterHtml } from "../module/runyth-encounter-crucible/scripts/services/persistence-service.js";
 
 test("saved Journal HTML escapes encounter and participant names", () => {
   const html = encounterHtml({
@@ -25,7 +25,7 @@ test("saved Journal HTML escapes encounter and participant names", () => {
   assert.match(html, /Wolf &quot;Alpha&quot;/);
 });
 
-import { saveEncounter } from "../module/encounter-crucible/scripts/services/persistence-service.js";
+import { saveEncounter } from "../module/runyth-encounter-crucible/scripts/services/persistence-service.js";
 
 const originalGame = globalThis.game;
 const originalFoundry = globalThis.foundry;
@@ -42,7 +42,7 @@ function persistenceEnvironment(journal) {
     i18n: { localize: (key) => key },
     settings: {
       get(_module, key) {
-        if (key === "journalRootFolder") return "Encounter Crucible";
+        if (key === "journalRootFolder") return "Runyth Encounter Crucible";
         if (key === "savedNameFormat") return "{name}";
         return null;
       }

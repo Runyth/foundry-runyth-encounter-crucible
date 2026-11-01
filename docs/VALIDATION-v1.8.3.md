@@ -1,4 +1,4 @@
-# Validation — Encounter Crucible 1.8.3
+# Validation — Runyth Encounter Crucible 1.8.3
 
 The release gate validates:
 

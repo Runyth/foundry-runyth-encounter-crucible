@@ -1,12 +1,12 @@
-# Patch release report — Encounter Crucible 1.8.2
+# Patch release report — Runyth Encounter Crucible 1.8.2
 
 ## Objective
 
-Eliminate false compatibility errors from dependants requiring Encounter Crucible 1.8.1+ and Helper API 2.7.1+.
+Eliminate false compatibility errors from dependants requiring Runyth Encounter Crucible 1.8.1+ and Helper API 2.7.1+.
 
 ## Result
 
-Encounter Crucible 1.8.2 exposes Helper API 2.7.1 before dependent init callbacks, maintains the same object through ready, publishes stable compatibility aliases, and supplies public version assertions and a readiness Promise.
+Runyth Encounter Crucible 1.8.2 exposes Helper API 2.7.1 before dependent init callbacks, maintains the same object through ready, publishes stable compatibility aliases, and supplies public version assertions and a readiness Promise.
 
 ## Compatibility
 

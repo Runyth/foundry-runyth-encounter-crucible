@@ -1,6 +1,6 @@
-# Release report — Encounter Crucible 1.8.7
+# Release report — Runyth Encounter Crucible 1.8.7
 
-Version 1.8.7 fixes the public Helper API contract required by a campaign helper. The core now owns Actor collection and authoritative encounter assessment as discoverable capabilities, allowing campaign helpers to remain consumers of Encounter Crucible rather than duplicating its Foundry traversal, normalization, or difficulty logic.
+Version 1.8.7 fixes the public Helper API contract required by a campaign helper. The core now owns Actor collection and authoritative encounter assessment as discoverable capabilities, allowing campaign helpers to remain consumers of Runyth Encounter Crucible rather than duplicating its Foundry traversal, normalization, or difficulty logic.
 
 - Module: `1.8.7`
 - Helper API: `2.7.5`

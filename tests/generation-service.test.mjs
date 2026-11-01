@@ -3,8 +3,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { generateEncounter } from "../module/encounter-crucible/scripts/core/encounter.js";
-import { generateEncounterAsync } from "../module/encounter-crucible/scripts/services/generation-service.js";
+import { generateEncounter } from "../module/runyth-encounter-crucible/scripts/core/encounter.js";
+import { generateEncounterAsync } from "../module/runyth-encounter-crucible/scripts/services/generation-service.js";
 
 const originalWorker = globalThis.Worker;
 const originalRequestAnimationFrame = globalThis.requestAnimationFrame;

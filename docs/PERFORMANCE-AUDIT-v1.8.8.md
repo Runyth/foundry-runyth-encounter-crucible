@@ -1,4 +1,4 @@
-# Performance audit — Encounter Crucible 1.8.8
+# Performance audit — Runyth Encounter Crucible 1.8.8
 
 The startup fix also reduces browser-side module-loading overhead.
 

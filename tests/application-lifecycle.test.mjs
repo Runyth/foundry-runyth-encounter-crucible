@@ -3,7 +3,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { readStoredPosition, runActionOnce, saveStoredPosition } from "../module/encounter-crucible/scripts/apps/application-lifecycle.js";
+import { readStoredPosition, runActionOnce, saveStoredPosition } from "../module/runyth-encounter-crucible/scripts/apps/application-lifecycle.js";
 
 const originalGame = globalThis.game;
 

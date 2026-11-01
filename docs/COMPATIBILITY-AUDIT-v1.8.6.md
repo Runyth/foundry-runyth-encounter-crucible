@@ -1,4 +1,4 @@
-# Compatibility audit — Encounter Crucible 1.8.6
+# Compatibility audit — Runyth Encounter Crucible 1.8.6
 
 ## Finding
 

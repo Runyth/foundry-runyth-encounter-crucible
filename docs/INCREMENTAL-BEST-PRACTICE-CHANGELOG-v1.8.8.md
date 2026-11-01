@@ -1,4 +1,4 @@
-# Incremental best-practice changelog — Encounter Crucible 1.8.8
+# Incremental best-practice changelog — Runyth Encounter Crucible 1.8.8
 
 - Separated editable source topology from installable runtime topology.
 - Retained maintainable modular ES-module source for development and testing.

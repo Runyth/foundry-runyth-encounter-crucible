@@ -3,7 +3,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { buildEncounterSummaryContent, postEncounterSummary } from "../module/encounter-crucible/scripts/services/chat-service.js";
+import { buildEncounterSummaryContent, postEncounterSummary } from "../module/runyth-encounter-crucible/scripts/services/chat-service.js";
 
 const originalGame = globalThis.game;
 const originalFoundry = globalThis.foundry;

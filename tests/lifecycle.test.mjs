@@ -3,16 +3,16 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { createLifecycleGate, exposeApi } from "../module/encounter-crucible/scripts/core/lifecycle.js";
+import { createLifecycleGate, exposeApi } from "../module/runyth-encounter-crucible/scripts/core/lifecycle.js";
 
 test("public API exposure is idempotent and supports both documented game aliases", () => {
   const module = {};
   const game = {
-    modules: new Map([["encounter-crucible", module]])
+    modules: new Map([["runyth-encounter-crucible", module]])
   };
   const api = Object.freeze({ apiVersion: "2.7.5" });
-  assert.equal(exposeApi(game, "encounter-crucible", api), true);
-  assert.equal(exposeApi(game, "encounter-crucible", api), true);
+  assert.equal(exposeApi(game, "runyth-encounter-crucible", api), true);
+  assert.equal(exposeApi(game, "runyth-encounter-crucible", api), true);
   assert.equal(module.api, api);
   assert.equal(game.encounterCrucible, api);
   assert.equal(game.encounterCrucibleApi, api);

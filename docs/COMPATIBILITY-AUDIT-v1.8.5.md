@@ -1,8 +1,8 @@
-# Compatibility and interference audit — Encounter Crucible 1.8.5
+# Compatibility and interference audit — Runyth Encounter Crucible 1.8.5
 
 ## Finding
 
-Encounter Crucible 1.8.4 initialized normally and exposed Helper API 2.7.2. Encounter Crucible: Forge then reported that the API lacked helper-module registration. The generation capability added in 1.8.4 was therefore necessary but not sufficient for Forge's complete integration contract.
+Runyth Encounter Crucible 1.8.4 initialized normally and exposed Helper API 2.7.2. Runyth Encounter Crucible: Forge then reported that the API lacked helper-module registration. The generation capability added in 1.8.4 was therefore necessary but not sufficient for Forge's complete integration contract.
 
 ## Root cause
 
@@ -26,10 +26,10 @@ The public API had extension registries for encounter models, system adapters, a
 - Helper registration mutates only an internal module-owned Map.
 - Public namespace and descriptors are frozen.
 - Helper registration does not bypass permissions enforced by existing core methods.
-- Disabling a helper leaves Encounter Crucible settings, Journals, flags, Tokens, and Combats unchanged.
+- Disabling a helper leaves Runyth Encounter Crucible settings, Journals, flags, Tokens, and Combats unchanged.
 
 ## Unrelated errors in the supplied log
 
-The log also identifies failures or deprecations owned by other packages, including duplicate custom-element registration, `html.find` against native HTML, array-shaped Scene Controls mutation, deprecated Chat hooks, deprecated globals, DAE sense paths, missing assets, and V1 applications. Encounter Crucible does not mask or patch those packages.
+The log also identifies failures or deprecations owned by other packages, including duplicate custom-element registration, `html.find` against native HTML, array-shaped Scene Controls mutation, deprecated Chat hooks, deprecated globals, DAE sense paths, missing assets, and V1 applications. Runyth Encounter Crucible does not mask or patch those packages.
 
-No Encounter Crucible path is present in a deprecation stack or runtime exception in the supplied log. Its only actionable entry is Forge's compatibility rejection, which this release corrects.
+No Runyth Encounter Crucible path is present in a deprecation stack or runtime exception in the supplied log. Its only actionable entry is Forge's compatibility rejection, which this release corrects.

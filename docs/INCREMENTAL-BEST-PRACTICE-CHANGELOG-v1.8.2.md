@@ -1,4 +1,4 @@
-# Incremental best-practice changelog — Encounter Crucible 1.8.2
+# Incremental best-practice changelog — Runyth Encounter Crucible 1.8.2
 
 ## Dependency lifecycle
 

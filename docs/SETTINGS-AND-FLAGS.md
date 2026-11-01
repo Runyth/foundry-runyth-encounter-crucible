@@ -1,6 +1,6 @@
 # Settings and flags
 
-All settings use the `encounter-crucible` namespace.
+All settings use the `runyth-encounter-crucible` namespace.
 
 ## World settings
 
@@ -33,9 +33,9 @@ Only finite numeric `left`, `top`, `width`, and `height` fields are persisted.
 Saved Journal Entries contain:
 
 ```text
-flags.encounter-crucible.kind = "encounter"
-flags.encounter-crucible.schemaVersion = 4
-flags.encounter-crucible.encounter = <EncounterDefinition>
+flags.runyth-encounter-crucible.kind = "encounter"
+flags.runyth-encounter-crucible.schemaVersion = 4
+flags.runyth-encounter-crucible.encounter = <EncounterDefinition>
 ```
 
 ## Data compatibility

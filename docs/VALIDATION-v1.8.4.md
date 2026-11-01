@@ -1,4 +1,4 @@
-# Validation — Encounter Crucible 1.8.4
+# Validation — Runyth Encounter Crucible 1.8.4
 
 ## Required automated validation
 

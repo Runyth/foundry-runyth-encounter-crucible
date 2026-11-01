@@ -1,4 +1,4 @@
-# Validation — Encounter Crucible 1.8.7
+# Validation — Runyth Encounter Crucible 1.8.7
 
 - Clean dependency install: passed with zero reported vulnerabilities.
 - Formatting: passed.
