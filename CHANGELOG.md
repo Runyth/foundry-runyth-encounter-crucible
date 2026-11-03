@@ -1,42 +1,31 @@
 # Changelog
 
-## 1.9.2 - 2026-11-01
-
-### Fixed
+## 1.9.2 — 2026-11-01
 
 - Attributed the source licence headers to the same holder the README Licence chapter names so every module surface carries the same copyright holder.
 
 ## 1.9.1 — 2026-11-01
 
-### Fixed
-
 - Removed the stale pre-rebrand `module/encounter-crucible/` source copies so the source archive carries only `module/runyth-encounter-crucible/`.
 - Preserved the rebranded runtime, API, and data contracts; this patch changes source packaging only.
 
 ## 1.9.0 — 2026-11-01
-## 1.9.0 — 2026-11-01
-
-### Changed
 
 - Adopted the Runyth brand across the whole published identity: the Foundry module id is now `runyth-encounter-crucible` and the displayed title is `Runyth Encounter Crucible`.
 - Renamed the runtime directory to `module/runyth-encounter-crucible/`, the stylesheet to `styles/runyth-encounter-crucible.css`, and all isolation class prefixes to `runyth-encounter-crucible-*`.
 - Installation folders for existing worlds must be renamed to `runyth-encounter-crucible/`; saved flags under the module-scoped namespace migrate with the folder rename.
 ## 1.8.9 — 2026-11-01
 
-### Published
-
 - Aligned the repository with the AGPL-only publishing contract: added the AGPL notice to `tools/package.py`, removed the legacy all-rights-reserved `LICENSE.md` placeholder, and declared the licence in the lockfile root package.
 - Preserved the canonical content version; this patch changes licensing metadata only and requires no content migration.
 
 ## 1.8.8 — 2026-10-31
 
-### Published
-
 - Licensed the program under AGPL-3.0-or-later.
 - Published install, source, and documentation archives as `-mod`, `-src`, and `-doc`.
 - Removed private-campaign names from the public module.
 
-## 1.8.8 - 2026-08-24
+## 1.8.8 — 2026-08-24
 
 - Fixed the startup failure where child ES-module requests such as `scripts/core/encounter.js`, `scripts/services/generation-service.js`, and `scripts/services/actor-normalizer.js` could fail with `net::ERR_FAILED` and suppress the entire public API.
 - Replaced the installable runtime's browser module fan-out with one deterministic self-contained core/runtime bundle generated from the editable modular source tree.
@@ -49,7 +38,7 @@
 - Preserved Helper API `2.7.5`, all capability versions, schema `4`, settings, flags, saved encounters, generation behavior, permissions, and public API signatures.
 - Added no workaround for unrelated module load or deprecation errors.
 
-## 1.8.7 - 2026-08-08
+## 1.8.7 — 2026-08-08
 
 - Added the public `collectActors` Helper API capability required by a campaign helper.
 - Added the public `assessEncounter` Helper API capability required by a campaign helper.
@@ -61,7 +50,7 @@
 - Advanced Helper API from `2.7.4` to `2.7.5` for the additive public capability contract.
 - Added regression coverage for a campaign helper capability discovery, Actor collection modes, normalization, permissions, authoritative assessment, and side-effect defaults.
 
-## 1.8.6 - 2026-08-04
+## 1.8.6 — 2026-08-04
 
 - Hardened the existing `encounterGeneration` capability required by Encounter Crucible: Forge without duplicating or replacing its implementation.
 - Added a canonical immutable capability catalog shared by top-level API, Helper API, compatibility metadata, and feature lookup surfaces.
@@ -74,7 +63,7 @@
 - Preserved all previous generation methods, helper registration, calculations, settings, permissions, schema `4`, and compatibility with Helper API `2.7.1+` within major version 2.
 - Added capability-catalog, Forge-style detection, descriptor, property lookup, malformed-definition, and version-negotiation regression coverage.
 
-## 1.8.5 - 2026-08-04
+## 1.8.5 — 2026-08-04
 
 - Added the helper-module registration contract required by Encounter Crucible: Forge.
 - Added the canonical `registerHelperModule()` method and the `registerHelper()` compatibility alias.
@@ -89,7 +78,7 @@
 - Confirmed the supplied startup log contains no Encounter Crucible-owned deprecation or runtime exception; unrelated package failures remain intentionally unmodified.
 - Added helper-registry, Forge compatibility, lifecycle, duplicate-registration, signature, metadata, and three-archive regression coverage.
 
-## 1.8.4 - 2026-08-04
+## 1.8.4 — 2026-08-04
 
 - Added the explicit frozen callable `encounterGeneration` capability required by Encounter Crucible: Forge.
 - Added `capabilities`, `supportedCapabilities`, `capabilityMap`, `features`, `hasCapability()`, and `assertCapability()` discovery surfaces.
@@ -101,7 +90,7 @@
 - Preserved data schema `4`, settings, saved encounters, calculations, Worker-backed generation, cancellation, progress, and three-ZIP packaging.
 - Added capability detection, immutability, alias parity, synchronous generation, asynchronous generation, and semantic-range regression coverage.
 
-## 1.8.3 - 2026-08-03
+## 1.8.3 — 2026-08-03
 
 - Moved encounter generation into a dedicated ES-module Web Worker so Foundry remains responsive during long searches.
 - Added live generation progress, cancellation, and a cooperative yielding fallback for environments without Worker support.
@@ -116,7 +105,7 @@
 - Preserved Helper API `2.7.1`, data schema `4`, settings, saved encounters, calculations, generation modes, permissions, and three-ZIP release packaging.
 - Added Worker, cooperative fallback, cancellation, progress, concurrent extension-model, concurrent placement, cache, and responsiveness regression coverage.
 
-## 1.8.2 - 2026-08-03
+## 1.8.2 — 2026-08-03
 
 - Fixed false dependency failures requiring Encounter Crucible 1.8.1+ with Helper API 2.7.1.
 - Exposed the public API as soon as the core ES module loads, before dependent modules run their `init` callbacks.
@@ -130,7 +119,7 @@
 - Added dependency-order, early-exposure, version-range, readiness, archive, and three-bundle packaging regression coverage.
 - Changed release delivery to deterministic installable, source, and documentation/report ZIPs.
 
-## 1.4.2 - 2026-08-02
+## 1.4.2 — 2026-08-02
 
 - Fixed circular encounter assessments so repeated analysis, retained settings, and Journal flags remain serializable.
 - Eliminated duplicate core calculations and cached unchanged Combat Tracker previews.
@@ -144,7 +133,7 @@
 - Preserved Helper API `2.7.1`, schema `4`, settings, models, and documented workflows.
 - Expanded automated regression, compatibility, persistence, scale, and packaging coverage.
 
-## 1.4.1 - 2026-07-29
+## 1.4.1 — 2026-07-29
 
 - Isolated all Application CSS beneath module-owned roots and retained responsive narrow-window behavior.
 - Replaced generic Application action names with module-specific actions and added abortable, idempotent listener ownership.
@@ -160,7 +149,7 @@
 - Preserved Helper API `2.7.1`, data schema `4`, all encounter models, generation behavior, persistence, placement, and Combat creation.
 - Added compatibility, permission, duplicate-action, CSS, Scene Controls, Combat Tracker, Chat, settings, and lifecycle regression tests.
 
-## 1.4.0 - 2026-07-25
+## 1.4.0 — 2026-07-25
 
 - Preserved the accepted Encounter Crucible v1.4.0 feature baseline in a reproducible source repository.
 - Exposed Helper API 2.7.1.
@@ -173,4 +162,4 @@
 
 ## Prior accepted state
 
-The directly retrievable historical binary archive was not available during source reconstruction. Project records identify v1.4.0 and Helper API 2.7.1 as the newest accepted core baseline. This repository therefore preserves the recorded complete behavior as an editable reconstruction rather than claiming byte-identical recovery of a lost ZIP.
+- The directly retrievable historical binary archive was not available during source reconstruction. Project records identify v1.4.0 and Helper API 2.7.1 as the newest accepted core baseline. This repository therefore preserves the recorded complete behavior as an editable reconstruction rather than claiming byte-identical recovery of a lost ZIP.
