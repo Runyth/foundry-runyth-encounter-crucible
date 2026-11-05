@@ -2,7 +2,7 @@
   "id": "runyth-encounter-crucible",
   "title": "Runyth Encounter Crucible",
   "description": "Multi-model encounter difficulty analysis, generation, persistence, placement, and combat setup for Foundry VTT and D&D 5e.",
-  "version": "1.9.2",
+  "version": "1.9.3",
   "authors": [
     {
       "name": "Runyth",
@@ -51,6 +51,6 @@
   "readme": "README.md",
   "url": "https://github.com/Runyth/foundry-runyth-encounter-crucible",
   "manifest": "https://github.com/Runyth/foundry-runyth-encounter-crucible/releases/latest/download/module.json",
-  "download": "https://github.com/Runyth/foundry-runyth-encounter-crucible/releases/download/v1.9.2/runyth-encounter-crucible-v1.9.2-mod.zip",
+  "download": "https://github.com/Runyth/foundry-runyth-encounter-crucible/releases/download/v1.9.3/runyth-encounter-crucible-v1.9.3-mod.zip",
   "changelog": "CHANGELOG.md"
 }

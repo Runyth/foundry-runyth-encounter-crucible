@@ -1,5 +1,22 @@
 # Changelog
 
+
+## 1.9.3 — 2026-11-05
+
+- Fixed the combat tracker banner multiplying with every tracker re-render:
+  the insert-by-guard dedupe selector demanded a
+  `data-runyth-encounter-crucible-integration` attribute while the panel
+  element writes `data-encounter-crucible-integration`, so the guard never
+  recognised its own banner and each re-render mounted another one.
+- The guard selector now matches the attribute the banner writes.
+- Every re-render first purges panels this module ever mounted (by class and
+  attribute across every spelling of the data attribute from older builds)
+  in the tracker column, so sessions that already accumulated banners
+  collapse to a single banner at the next render.
+- Added a regression test reproducing the drift: a re-render storm with
+  attribute-spelling panels over a persistent column keeps exactly one
+  banner.
+
 ## 1.9.2 — 2026-11-01
 
 - Attributed the source licence headers to the same holder the README Licence chapter names so every module surface carries the same copyright holder.

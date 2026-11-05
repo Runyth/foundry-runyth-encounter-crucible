@@ -6,7 +6,7 @@ Runyth Encounter Crucible is a Foundry VTT v13 and D&D 5e encounter-analysis mod
 
 - Foundry VTT: minimum 13, verified 13.351, maximum 13
 - D&D 5e: minimum 4.2.0, verified 5.2.2, declared maximum 5.3.x
-- Runyth Encounter Crucible module: 1.9.1
+- Runyth Encounter Crucible module: 1.9.3
 - Runyth Encounter Crucible Helper API: 2.7.5
 - Encounter data schema: 4
 
@@ -16,7 +16,7 @@ Version 1.8.8 hardens clean startup. The editable source remains modular, but th
 
 1. Disable Runyth Encounter Crucible in the target world.
 2. Remove or replace `Data/modules/runyth-encounter-crucible/`.
-3. Extract `runyth-encounter-crucible-v1.9.2-mod.zip` into `Data/modules/`.
+3. Extract `runyth-encounter-crucible-v1.9.3-mod.zip` into `Data/modules/`.
 4. Confirm `Data/modules/runyth-encounter-crucible/module.json` exists.
 5. Restart Foundry after replacing module files, then enable the module and reload the world.
 
@@ -77,10 +77,10 @@ npm run release
 Artifacts are written to `dist/`:
 
 ```text
-runyth-encounter-crucible-v1.9.2-mod.zip
-runyth-encounter-crucible-v1.9.2-src.zip
-runyth-encounter-crucible-v1.9.2-doc.zip
-runyth-encounter-crucible-v1.9.2-SHA256SUMS.txt
+runyth-encounter-crucible-v1.9.3-mod.zip
+runyth-encounter-crucible-v1.9.3-src.zip
+runyth-encounter-crucible-v1.9.3-doc.zip
+runyth-encounter-crucible-v1.9.3-SHA256SUMS.txt
 ```
 
 ## Repository layout

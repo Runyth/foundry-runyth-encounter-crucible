@@ -3,7 +3,8 @@
 import { MODULE_ID } from "./core/constants.js";
 import { runActionOnce } from "./apps/application-lifecycle.js";
 
-const PANEL_SELECTOR = '[data-runyth-encounter-crucible-integration="combat-tracker"]';
+const PANEL_SELECTOR = '[data-encounter-crucible-integration="combat-tracker"]';
+const PANEL_CLASS = "runyth-encounter-crucible-tracker";
 let combatTrackerHookId = null;
 let previewCache = null;
 
@@ -17,6 +18,20 @@ function rootElement(html) {
 
 export function hasCombatTrackerPanel(root) {
   return Boolean(root?.querySelector?.(PANEL_SELECTOR));
+}
+
+// Tracker re-renders replace only the list subtree, so banners mounted above
+// it survive; purge every panel this module ever mounted (any attribute
+// spelling from older builds) before inserting a fresh one.
+export function purgeStrayTrackerPanels(root) {
+  const seen = new Set();
+  for (const scope of [root, globalThis.document]) {
+    for (const stray of scope?.querySelectorAll?.(`${PANEL_SELECTOR}, .${PANEL_CLASS}`) ?? []) {
+      seen.add(stray);
+    }
+  }
+  for (const stray of seen) stray.remove?.();
+  return seen.size;
 }
 
 function settingValue(key) {
@@ -93,10 +108,14 @@ export function registerCombatTrackerIntegration(api) {
       if (!globalThis.game?.user?.isGM) return;
       if (!globalThis.game.settings.get(MODULE_ID, "showCombatTrackerBanner")) return;
       const root = rootElement(html);
-      if (!root || hasCombatTrackerPanel(root)) return;
+      if (!root) return;
+
+      const target = root.querySelector(".combat-tracker-header")?.parentElement ?? root;
+      purgeStrayTrackerPanels(target.isConnected ? target.parentElement : globalThis.document);
+      if (hasCombatTrackerPanel(root)) return;
 
       const panel = document.createElement("section");
-      panel.className = "runyth-encounter-crucible-tracker";
+      panel.className = PANEL_CLASS;
       panel.dataset.encounterCrucibleIntegration = "combat-tracker";
 
       const openButton = createButton(
@@ -118,7 +137,6 @@ export function registerCombatTrackerIntegration(api) {
       });
       panel.append(openButton);
 
-      const target = root.querySelector(".combat-tracker-header")?.parentElement ?? root;
       target.prepend(panel);
 
       const combat = globalThis.game.combat;
